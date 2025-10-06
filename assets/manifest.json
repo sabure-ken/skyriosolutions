@@ -1,0 +1,21 @@
+{
+  "name": "SkyrioSolutions - Digital Solutions Agency",
+  "short_name": "SkyrioSolutions",
+  "description": "Enterprise-grade web development, mobile apps, and digital marketing solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#007bff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "images/logo-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/logo-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

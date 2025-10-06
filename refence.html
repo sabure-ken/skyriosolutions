@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyrioSolutions — From Code to Customers | Web & Mobile Development</title>
+    <meta name="description" content="SkyrioSolutions - Enterprise-grade web & mobile solutions. Professional website development, mobile apps, e-commerce, SEO & ongoing support. Based in Kenya, serving globally.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================
+           CSS RESET & VARIABLES
+        ========================= */
+        :root {
+            --primary-blue: #007bff;
+            --primary-dark: #0056b3;
+            --accent-teal: #00aaff;
+            --text-dark: #0b1220;
+            --text-light: #6b7280;
+            --text-muted: #9ca3af;
+            --bg-white: #ffffff;
+            --bg-light: #fbfcfe;
+            --border-light: rgba(11, 18, 32, 0.08);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --shadow-sm: 0 6px 18px rgba(10, 25, 47, 0.08);
+            --shadow-md: 0 8px 25px rgba(10, 25, 47, 0.12);
+            --shadow-lg: 0 14px 40px rgba(10, 25, 47, 0.15);
+            --max-width: 1100px;
+            --container-padding: 1rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* =========================
+           HEADER & NAVIGATION
+        ========================= */
+        .header {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 6px 24px rgba(11, 18, 32, 0.04);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem var(--container-padding);
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: var(--border-radius-sm);
+        }
+
+        .site-title {
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+        }
+
+        .site-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            padding: 0.5rem 0.75rem;
+            border-radius: var(--border-radius-sm);
+            transition: all 0.3s ease;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            background: rgba(0, 123, 255, 0.06);
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.7rem 1.25rem;
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+        .hero {
+            padding: 8rem var(--container-padding) 4rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(0,123,255,0.9) 0%, rgba(0,170,255,0.8) 100%), 
+                        url('https://images.pexels.com/photos/7974/pexels-photo.jpg') center/cover;
+            color: white;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-kicker {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat {
+            margin-bottom: 1rem;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+        }
+
+        .stat small {
+            color: var(--text-muted);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .card-item {
+            text-align: center;
+        }
+
+        .card-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-value {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+        .section {
+            padding: 5rem var(--container-padding);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--primary-blue);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-price {
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .card-features {
+            list-style: none;
+        }
+
+        .card-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .card-feature:before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* =========================
+           CONTACT FORM
+        ========================= */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-light);
+            border-radius: var(--border-radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+        }
+
+        .form-help {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .form-help a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        .footer {
+            background: var(--bg-white);
+            padding: 3rem var(--container-padding);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .footer-brand .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .footer-tagline {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .footer-links-group h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-link a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link a:hover {
+            color: var(--primary-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: var(--text-dark);
+            color: white;
+            border-radius: var(--border-radius-sm);
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            background: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================= */
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem var(--container-padding);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav-container" aria-label="Main navigation">
+            <div class="brand">
+                <a href="#home" class="logo-wrap">
+                    <img src="images/logo.png" alt="SkyrioSolutions" class="logo-img" width="48" height="48">
+                </a>
+                <div class="brand-text">
+                    <div class="site-title">SkyrioSolutions</div>
+                    <div class="site-sub">From Code to Customers</div>
+                </div>
+            </div>
+
+            <div class="nav-links" role="menubar">
+                <a href="#home" class="nav-link" role="menuitem">Home</a>
+                <a href="#about" class="nav-link" role="menuitem">About</a>
+                <a href="#services" class="nav-link" role="menuitem">Services</a>
+                <a href="#contact" class="nav-link" role="menuitem">Contact</a>
+            </div>
+
+            <div class="nav-cta">
+                <button class="btn" onclick="scrollToContact()">Get Quote</button>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                ☰
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <span class="hero-kicker">🚀 Launch • 📈 Grow • 🌟 Scale</span>
+                <h1 id="hero-title" class="hero-title">
+                    From Code to Customers – 
+                    <span style="background: linear-gradient(45deg, #fff, #e0f7ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Building Your Digital Empire</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Enterprise-grade web development, mobile apps, and digital marketing solutions. 
+                    Based in Kenya, delivering world-class quality at competitive pricing.
+                </p>
+
+                <div class="hero-ctas">
+                    <button class="btn btn-primary" onclick="scrollToContact()">
+                        ✨ Get Free Consultation
+                    </button>
+                    <a href="#services" class="btn btn-secondary">
+                        📋 View Our Services
+                    </a>
+                </div>
+
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span>⚡</span>
+                        Implementation ready in 2-4 weeks
+                    </div>
+                    <div class="hero-feature">
+                        <span>🛡️</span>
+                        Ongoing support & maintenance
+                    </div>
+                    <div class="hero-feature">
+                        <span>💰</span>
+                        Competitive pricing, premium quality
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-card" aria-label="Business highlights">
+                <div class="stat">
+                    <strong>Year 1 Target</strong>
+                    <small>Achieve KSh 960,000+ revenue</small>
+                </div>
+                <div class="stat">
+                    <strong>Mobile App Development</strong>
+                    <small>Cross-platform & native solutions</small>
+                </div>
+                <hr style="margin: 1rem 0; border: none; border-top: 1px solid #e5e7eb;">
+                <div class="card-grid">
+                    <div class="card-item">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🔄</div>
+                        <div class="card-label">Maintenance Plans</div>
+                        <div class="card-value">KSh 3K - 15K / month</div>
+                    </div>
+                    <div class="card-item">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛒</div>
+                        <div class="card-label">E-commerce Solutions</div>
+                        <div class="card-value">M-Pesa Integrated</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+            <h2 id="about-title" class="section-title">About SkyrioSolutions</h2>
+            <p class="section-subtitle">
+                Our mission is to empower businesses of all sizes with robust digital presence through innovative development and data-driven marketing. 
+                We blend technical excellence with a client-first approach.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" aria-labelledby="services-title">
+        <div class="container">
+            <h2 id="services-title" class="section-title">Our Services</h2>
+            <p class="section-subtitle">
+                Productized service tiers for predictable delivery and recurring revenue.
+            </p>
+
+            <div class="services-grid">
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3 class="card-title">Website Design & Development</h3>
+                    <p class="card-description">From brochure sites to complex web apps — responsive, SEO-optimized and built for conversions. Tiers: Basic → Enterprise.</p>
+                    <div class="card-price">From KSh 10,000</div>
+                    <ul class="card-features">
+                        <li class="card-feature">Responsive Design</li>
+                        <li class="card-feature">SEO Optimized</li>
+                        <li class="card-feature">Fast Loading</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3 class="card-title">Mobile App Development</h3>
+                    <p class="card-description">Cross-platform (Flutter/React Native) and native apps with backend APIs and admin dashboards.</p>
+                    <div class="card-price">From KSh 100,000</div>
+                    <ul class="card-features">
+                        <li class="card-feature">iOS & Android</li>
+                        <li class="card-feature">Backend API</li>
+                        <li class="card-feature">Admin Dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3 class="card-title">SEO & Digital Marketing</h3>
+                    <p class="card-description">Content-driven SEO, paid campaigns and analytics to attract qualified leads and grow revenue.</p>
+                    <div class="card-price">From KSh 5,000/month</div>
+                    <ul class="card-features">
+                        <li class="card-feature">Keyword Research</li>
+                        <li class="card-feature">Content Strategy</li>
+                        <li class="card-feature">Performance Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🛒</div>
+                    <h3 class="card-title">E-commerce Solutions</h3>
+                    <p class="card-description">WooCommerce/Shopify stores with secure payments, M-Pesa integration and inventory management.</p>
+                    <div class="card-price">From KSh 40,000</div>
+                    <ul class="card-features">
+                        <li class="card-feature">M-Pesa Integration</li>
+                        <li class="card-feature">Inventory Management</li>
+                        <li class="card-feature">Secure Checkout</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔧</div>
+                    <h3 class="card-title">Maintenance & Hosting</h3>
+                    <p class="card-description">Monthly maintenance plans, security monitoring, backups and hosting reselling to keep sites healthy.</p>
+                    <div class="card-price">From KSh 3,000/month</div>
+                    <ul class="card-features">
+                        <li class="card-feature">Security Monitoring</li>
+                        <li class="card-feature">Regular Backups</li>
+                        <li class="card-feature">Performance Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3 class="card-title">IT Consulting & Strategy</h3>
+                    <p class="card-description">Technical roadmaps, product strategy and team training to help you scale technology investments.</p>
+                    <div class="card-price">Custom Pricing</div>
+                    <ul class="card-features">
+                        <li class="card-feature">Technical Roadmaps</li>
+                        <li class="card-feature">Product Strategy</li>
+                        <li class="card-feature">Team Training</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+            <h2 id="contact-title" class="section-title">Contact & Request a Quote</h2>
+            <p class="section-subtitle">
+                Ready to start your project? Get in touch for a free consultation and quote.
+            </p>
+
+            <div class="form-container">
+                <div class="contact-card">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required placeholder="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required placeholder="your.email@example.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="Your company name (optional)">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" class="form-label">Service Interested In</label>
+                            <select id="service" name="service" class="form-select">
+                                <option value="">Select a service</option>
+                                <option value="website">Website Development</option>
+                                <option value="mobile">Mobile App Development</option>
+                                <option value="seo">SEO & Digital Marketing</option>
+                                <option value="ecommerce">E-commerce Solutions</option>
+                                <option value="maintenance">Maintenance & Hosting</option>
+                                <option value="consulting">IT Consulting</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Details</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project, timeline, budget, and any specific requirements..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="submitBtn">
+                                Send Message
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                Clear Form
+                            </button>
+                            <div class="form-help">
+                                Or email us directly: <a href="mailto:hello@skyriosolutions.com">hello@skyriosolutions.com</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">SkyrioSolutions</div>
+                    <p class="footer-tagline">From Code to Customers — Building Your Digital Empire</p>
+                    <div class="footer-contact">
+                        <p>Email: <a href="mailto:hello@skyriosolutions.com">hello@skyriosolutions.com</a></p>
+                        <p>Founder: Kennedy Sabure</p>
+                    </div>
+                </div>
+
+                <div class="footer-links-group">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#services">Web Development</a></li>
+                        <li class="footer-link"><a href="#services">Mobile Apps</a></li>
+                        <li class="footer-link"><a href="#services">Digital Marketing</a></li>
+                        <li class="footer-link"><a href="#services">E-commerce</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                            Linkedin
+                        </a>
+                        <a href="#" class="social-link" title="Twitter" aria-label="Twitter">
+                            Twitter
+                        </a>
+                        <a href="#" class="social-link" title="GitHub" aria-label="GitHub">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; <span id="currentYear"></span> SkyrioSolutions. All rights reserved.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript functionality
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 6px 24px rgba(11, 18, 32, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 6px 24px rgba(11, 18, 32, 0.04)';
+            }
+        });
+    </script>
+</body>
+</html>

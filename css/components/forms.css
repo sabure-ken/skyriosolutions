@@ -1,0 +1,226 @@
+/* =========================
+   Forms Component
+   ========================= */
+
+/* Form Container */
+.form-container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.contact-card {
+  background: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* Labels */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+/* Input Fields */
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--border-radius-sm);
+  background: var(--bg-white);
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+  background: var(--bg-white);
+}
+
+.form-input:hover,
+.form-textarea:hover,
+.form-select:hover {
+  border-color: var(--primary-blue);
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 8rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* Select */
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 3rem;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Form Help Text */
+.form-help {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.form-help a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+}
+
+.form-help a:hover {
+  color: var(--primary-dark);
+}
+
+/* Checkbox and Radio */
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.form-check-input {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 2px solid var(--border-medium);
+  border-radius: 4px;
+  background: var(--bg-white);
+  transition: all var(--transition-fast);
+}
+
+.form-check-input:checked {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+.form-check-label {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* Form Validation States */
+.form-input.error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-input.success {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+.form-feedback {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.form-feedback.error {
+  color: #dc2626;
+}
+
+.form-feedback.success {
+  color: #059669;
+}
+
+/* Loading State */
+.form-loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.form-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: -0.625rem 0 0 -0.625rem;
+  border: 2px solid transparent;
+  border-top: 2px solid var(--primary-blue);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Forms */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 1.25rem;
+  }
+  
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: 0.875rem;
+  }
+}

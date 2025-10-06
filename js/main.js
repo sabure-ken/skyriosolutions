@@ -9,10 +9,14 @@ function initializeApp() {
     initializeCurrentYear();
     initializeSmoothScroll();
     setActiveMenu();
-    initializeThemeEnhancements(); // NEW: Added theme enhancements
+    initializeThemeEnhancements();
+    initializeMobileForms(); // NEW: Mobile form handling
+    initializeTouchInteractions(); // NEW: Touch support
+    initializeMobilePerformance(); // NEW: Performance optimizations
+    initializePortfolioFilter(); // NEW: Portfolio filtering
 }
 
-// Navigation functionality
+// Navigation functionality - UPDATED FOR MOBILE
 function initializeNavigation() {
     const header = document.querySelector('.header');
     const hamburger = document.getElementById('hamburger');
@@ -28,41 +32,75 @@ function initializeNavigation() {
         }
     });
 
-    // Mobile menu toggle
+    // Mobile menu toggle - UPDATED
     if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent event bubbling
+            
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             hamburger.setAttribute('aria-expanded', !isExpanded);
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
             
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-                document.body.style.overflow = 'auto'; // NEW: Restore scroll
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+                // Move CTA button into mobile menu
+                if (navCTA && window.innerWidth <= 768) {
+                    navLinks.appendChild(navCTA);
+                }
             } else {
-                navLinks.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // NEW: Prevent background scroll
-                navLinks.classList.add('slide-in-right');
+                document.body.style.overflow = 'auto';
+                // Move CTA button back to original position
+                if (navCTA && window.innerWidth <= 768) {
+                    document.querySelector('.nav-container').appendChild(navCTA);
+                }
             }
+        });
+
+        // Close mobile menu when clicking on links
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Move CTA button back to original position
+                if (navCTA && window.innerWidth <= 768) {
+                    document.querySelector('.nav-container').appendChild(navCTA);
+                }
+            });
         });
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
                 hamburger.setAttribute('aria-expanded', 'false');
-                navLinks.style.display = 'none';
-                document.body.style.overflow = 'auto'; // NEW: Restore scroll
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Move CTA button back to original position
+                if (navCTA && window.innerWidth <= 768) {
+                    document.querySelector('.nav-container').appendChild(navCTA);
+                }
             }
         });
 
-        // Close mobile menu on link click
-        if (navLinks) {
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    navLinks.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // NEW: Restore scroll
-                });
-            });
-        }
+        // Close mobile menu on window resize if it becomes desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Ensure CTA button is in correct position
+                if (navCTA && !document.querySelector('.nav-container').contains(navCTA)) {
+                    document.querySelector('.nav-container').appendChild(navCTA);
+                }
+            }
+        });
     }
 }
 
@@ -79,7 +117,7 @@ function initializeAnimations() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                entry.target.classList.add('animated'); // NEW: Add animated class
+                entry.target.classList.add('animated');
             }
         });
     }, observerOptions);
@@ -129,12 +167,20 @@ function initializeSmoothScroll() {
     });
 }
 
-// Form handling
+// Form handling - ENHANCED FOR MOBILE
 function handleContactForm(formId) {
     const form = document.getElementById(formId);
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Mobile-specific validation
+            if (window.innerWidth <= 768) {
+                if (!validateMobileForm(this)) {
+                    showNotification('Please fill all required fields correctly.', 'error');
+                    return;
+                }
+            }
             
             // Get form data
             const formData = new FormData(this);
@@ -144,12 +190,15 @@ function handleContactForm(formId) {
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
+            // Mobile-optimized loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
+            submitBtn.style.minHeight = '44px'; // Maintain touch target size
             
             // Add loading state styles
-            submitBtn.style.background = 'var(--accent-teal)'; // NEW: Use theme color
+            submitBtn.style.background = 'var(--accent-teal)';
             submitBtn.style.cursor = 'not-allowed';
+            submitBtn.style.opacity = '0.8';
             
             // Simulate API call
             setTimeout(() => {
@@ -158,50 +207,120 @@ function handleContactForm(formId) {
                 form.reset();
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                submitBtn.style.background = ''; // NEW: Reset background
+                submitBtn.style.background = '';
                 submitBtn.style.cursor = 'pointer';
+                submitBtn.style.opacity = '1';
             }, 2000);
         });
+
+        // Real-time validation for mobile
+        if (window.innerWidth <= 768) {
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+            });
+        }
     }
 }
 
-// NEW: Notification system for form submissions
+// NEW: Mobile form validation
+function validateMobileForm(form) {
+    let isValid = true;
+    const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+    
+    inputs.forEach(input => {
+        if (!validateField(input)) {
+            isValid = false;
+        }
+    });
+    
+    return isValid;
+}
+
+// NEW: Individual field validation
+function validateField(field) {
+    if (field.hasAttribute('required') && !field.value.trim()) {
+        field.style.borderColor = '#ef4444';
+        field.style.background = 'rgba(239, 68, 68, 0.1)';
+        return false;
+    }
+    
+    // Email validation
+    if (field.type === 'email' && field.value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+            field.style.borderColor = '#ef4444';
+            field.style.background = 'rgba(239, 68, 68, 0.1)';
+            return false;
+        }
+    }
+    
+    // Reset styles if valid
+    field.style.borderColor = '';
+    field.style.background = '';
+    return true;
+}
+
+// UPDATED: Notification system for mobile
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.textContent = message;
+    
+    // Mobile-optimized styles
+    const isMobile = window.innerWidth <= 768;
+    
     notification.style.cssText = `
         position: fixed;
-        top: 100px;
-        right: 2rem;
-        padding: 1rem 1.5rem;
-        background: ${type === 'success' ? 'var(--gradient-tech)' : 'var(--gradient-secondary)'};
+        top: ${isMobile ? '80px' : '100px'};
+        ${isMobile ? 'left: 1rem; right: 1rem;' : 'right: 2rem;'}
+        padding: ${isMobile ? '1rem' : '1rem 1.5rem'};
+        background: ${type === 'success' ? 'var(--gradient-tech)' : 
+                     type === 'error' ? 'var(--gradient-secondary)' : 
+                     'rgba(30, 41, 59, 0.95)'};
         color: white;
         border-radius: var(--border-radius-sm);
         box-shadow: var(--shadow-lg);
         z-index: 10000;
-        transform: translateX(400px);
+        transform: ${isMobile ? 'translateY(-100px)' : 'translateX(400px)'};
         transition: transform 0.3s ease;
-        max-width: 300px;
+        max-width: ${isMobile ? 'calc(100vw - 2rem)' : '300px'};
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.2);
+        text-align: ${isMobile ? 'center' : 'left'};
+        font-size: ${isMobile ? '0.9rem' : '1rem'};
     `;
     
     document.body.appendChild(notification);
     
     // Animate in
     setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
+        notification.style.transform = 'translateX(0) translateY(0)';
     }, 100);
     
-    // Remove after 5 seconds
+    // Auto-remove after delay
     setTimeout(() => {
-        notification.style.transform = 'translateX(400px)';
+        notification.style.transform = isMobile ? 'translateY(-100px)' : 'translateX(400px)';
         setTimeout(() => {
             if (notification.parentNode) {
                 notification.parentNode.removeChild(notification);
             }
         }, 300);
     }, 5000);
+    
+    // Allow tap to dismiss on mobile
+    if (isMobile) {
+        notification.style.cursor = 'pointer';
+        notification.addEventListener('click', () => {
+            notification.style.transform = 'translateY(-100px)';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        });
+    }
 }
 
 // Initialize contact forms
@@ -379,6 +498,126 @@ function initializePortfolioFilter() {
         });
     });
 }
+
+// NEW: Enhanced mobile form handling
+function initializeMobileForms() {
+    const forms = document.querySelectorAll('form');
+    
+    forms.forEach(form => {
+        // Prevent zoom on focus in iOS
+        const inputs = form.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                if (window.innerWidth <= 768) {
+                    this.style.fontSize = '16px'; // Prevent zoom
+                }
+            });
+            
+            // Add input event for real-time validation on mobile
+            input.addEventListener('input', function() {
+                if (window.innerWidth <= 768 && this.hasAttribute('required')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        // Improve touch targets for mobile
+        if (window.innerWidth <= 768) {
+            const buttons = form.querySelectorAll('button, .btn');
+            buttons.forEach(button => {
+                button.style.minHeight = '44px';
+                button.style.padding = '12px 16px';
+            });
+            
+            // Add larger touch targets for form elements
+            const labels = form.querySelectorAll('label');
+            labels.forEach(label => {
+                label.style.padding = '8px 0';
+            });
+        }
+    });
+}
+
+// NEW: Touch-friendly carousel/slider for mobile
+function initializeTouchInteractions() {
+    // Add touch swipe support for portfolio items
+    const portfolioSection = document.querySelector('.portfolio');
+    if (portfolioSection && window.innerWidth <= 768) {
+        let startX = 0;
+        let currentX = 0;
+        
+        portfolioSection.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        portfolioSection.addEventListener('touchmove', (e) => {
+            currentX = e.touches[0].clientX;
+        });
+        
+        portfolioSection.addEventListener('touchend', () => {
+            const diff = startX - currentX;
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                // You can add portfolio navigation here
+                console.log('Swipe detected:', diff > 0 ? 'left' : 'right');
+            }
+        });
+    }
+    
+    // Improve touch experience for buttons and links
+    if (window.innerWidth <= 768) {
+        const interactiveElements = document.querySelectorAll('button, a, .btn, .card, .portfolio-card');
+        interactiveElements.forEach(element => {
+            element.style.webkitTapHighlightColor = 'rgba(14, 165, 233, 0.3)';
+        });
+    }
+}
+
+// NEW: Mobile performance optimizations
+function initializeMobilePerformance() {
+    // Debounce scroll events for mobile performance
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(() => {
+            // Heavy operations after scroll ends
+        }, 100);
+    });
+
+    // Optimize animations for mobile
+    if (window.innerWidth <= 768) {
+        // Reduce animation intensity on mobile
+        document.documentElement.style.setProperty('--shadow-lg', '0 10px 15px -3px rgba(15, 23, 42, 0.1)');
+        
+        // Optimize transition durations for better mobile performance
+        const animatedElements = document.querySelectorAll('*');
+        animatedElements.forEach(el => {
+            const style = window.getComputedStyle(el);
+            if (style.transition && style.transition !== 'all 0s ease 0s') {
+                el.style.transition = style.transition.replace(/\d\.\d+s/g, '0.3s');
+            }
+        });
+    }
+}
+
+// NEW: Mobile viewport height fix for iOS
+function initializeViewportHeightFix() {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+}
+
+// Initialize viewport height fix for mobile
+document.addEventListener('DOMContentLoaded', initializeViewportHeightFix);
 
 // Export functions for use in other modules
 if (typeof module !== 'undefined' && module.exports) {

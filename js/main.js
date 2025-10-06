@@ -10,10 +10,10 @@ function initializeApp() {
     initializeSmoothScroll();
     setActiveMenu();
     initializeThemeEnhancements();
-    initializeMobileForms();
-    initializeTouchInteractions();
-    initializeMobilePerformance();
-    initializePortfolioFilter();
+    initializeMobileForms(); // NEW: Mobile form handling
+    initializeTouchInteractions(); // NEW: Touch support
+    initializeMobilePerformance(); // NEW: Performance optimizations
+    initializePortfolioFilter(); // NEW: Portfolio filtering
 }
 
 // Navigation functionality - UPDATED FOR MOBILE
@@ -390,24 +390,17 @@ function addScrollToTopButton() {
 // Initialize scroll-to-top button
 document.addEventListener('DOMContentLoaded', addScrollToTopButton);
 
-// Active menu highlighting - UPDATED FOR MULTI-PAGE NAVIGATION
+// Active menu highlighting
 function setActiveMenu() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
         const linkHref = link.getAttribute('href');
-        // Remove active class from all links first
-        link.classList.remove('active');
-        
-        // Check if this link matches the current page
         if (linkHref === currentPage) {
             link.classList.add('active');
-        }
-        
-        // Special case for index.html and root
-        if ((currentPage === 'index.html' || currentPage === '') && linkHref === 'index.html') {
-            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
         }
     });
 }
@@ -478,34 +471,32 @@ function initializePortfolioFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
     
-    if (filterBtns.length > 0 && portfolioCards.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                const filterValue = this.getAttribute('data-filter');
-                
-                portfolioCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
-                        }, 100);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            portfolioCards.forEach(card => {
+                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
             });
         });
-    }
+    });
 }
 
 // NEW: Enhanced mobile form handling

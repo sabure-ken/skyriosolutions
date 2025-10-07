@@ -1,5 +1,5 @@
 /* =========================================================
-   SkyRioski — Header + Mobile Menu Styles
+   SkyrioSolutions — Header + Mobile Menu Styles
    Clean, responsive, and smooth animated version
    ========================================================= */
 
@@ -15,13 +15,14 @@ body {
   background: #ffffff;
   color: #222222;
   overflow-x: hidden;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Links */
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
 }
 
 /* Utility class to disable scroll when menu is open */
@@ -29,31 +30,60 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* ========== HEADER / NAVBAR ========== */
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Container */
+.nav-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 70px;
   padding: 0 5%;
-  z-index: 1000;
 }
 
-/* Logo */
-.logo {
-  font-size: 1.6rem;
+/* Logo + Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand .logo-img {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-text .site-title {
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #222222;
-  letter-spacing: 1px;
+  color: #222;
 }
 
-/* ========== DESKTOP NAV LINKS ========== */
+.brand-text .site-sub {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Desktop Nav Links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -62,88 +92,111 @@ body.menu-open {
 
 .nav-links a {
   font-weight: 500;
-  color: #222222;
+  color: #222;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-cta .btn {
+  background: #007bff;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.nav-cta .btn:hover {
+  background: #0056b3;
+}
+
+/* =========================================================
+   HAMBURGER ICON
+   ========================================================= */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #222;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.hamburger.active {
   color: #007bff;
 }
 
-/* ========== HAMBURGER MENU ICON ========== */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 28px;
-  height: 22px;
-  cursor: pointer;
-  gap: 5px;
-  transition: all 0.3s ease;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #222222;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Animate hamburger to "X" when active */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ========== MOBILE MENU (DROPDOWN VERSION) ========== */
+/* =========================================================
+   MOBILE MENU (DROPDOWN)
+   ========================================================= */
 .mobile-menu {
   position: fixed;
-  top: 70px; /* directly below header */
+  top: 70px;
   left: 0;
   width: 100%;
   height: calc(100vh - 70px);
-  background-color: #ffffff;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: 2rem;
-  gap: 1.5rem;
+  gap: 1.8rem;
+  padding-top: 2.5rem;
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
   transition: all 0.4s ease;
   z-index: 999;
-  will-change: transform, opacity;
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Mobile Menu Links */
 .mobile-menu a {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  color: #222222;
-  transition: color 0.3s ease;
+  color: #222;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
 
-.mobile-menu a:hover {
-  color: #007bff;
-}
-
-/* When menu is active */
 .mobile-menu.active {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* Animate links in sequence */
+.mobile-menu.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add subtle divider line between links */
+.mobile-menu a + a {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1rem;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1.5rem;
@@ -151,12 +204,13 @@ body.menu-open {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
+  .nav-links,
+  .nav-cta {
     display: none;
   }
 
   .hamburger {
-    display: flex;
+    display: block;
   }
 
   .mobile-menu {
@@ -164,30 +218,58 @@ body.menu-open {
   }
 }
 
-/* Optional subtle animation for links */
-.mobile-menu a {
-  animation: fadeIn 0.3s ease forwards;
-  opacity: 0;
-}
-
-.mobile-menu.active a {
-  opacity: 1;
-}
-
+/* =========================================================
+   ANIMATIONS & EFFECTS
+   ========================================================= */
 @keyframes fadeIn {
   from {
-    transform: translateY(-10px);
     opacity: 0;
+    transform: translateY(-8px);
   }
   to {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* ========== OPTIONAL HEADER STICKY EFFECT ========== */
+/* Scroll shadow on header */
 .header.scrolled {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  background-color: #fdfdfd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #fafafa;
   transition: all 0.3s ease;
+}
+
+/* =========================================================
+   OPTIONAL: Dark Mode Support (auto)
+   ========================================================= */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0f172a;
+    color: #e2e8f0;
+  }
+
+  .header {
+    background: #1e293b;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-links a {
+    color: #e2e8f0;
+  }
+
+  .nav-links a::after {
+    background: #38bdf8;
+  }
+
+  .hamburger {
+    color: #e2e8f0;
+  }
+
+  .mobile-menu {
+    background: #1e293b;
+  }
+
+  .mobile-menu a {
+    color: #e2e8f0;
+  }
 }

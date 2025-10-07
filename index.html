@@ -40,24 +40,24 @@
                 <a href="contact.html" class="btn">Get Quote</a>
             </div>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="hamburger" aria-label="Toggle navigation menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
         </nav>
-            </nav>
-    
-    <!-- ADD THIS MOBILE MENU -->
-    <div class="mobile-menu">
-        <div class="mobile-nav-links">
-            <a href="index.html" class="mobile-nav-link active">Home</a>
-            <a href="about.html" class="mobile-nav-link">About</a>
-            <a href="services.html" class="mobile-nav-link">Services</a>
-            <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
-            <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Get Quote</a>
-        </div>
-    </div>
-</header>
+        <!-- Mobile Menu (slides in from right) -->
+ <div class="mobile-menu" id="mobileMenu">
+  <nav class="mobile-menu-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="portfolio.html" class="nav-link">Portfolio</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+  <a href="contact.html" class="btn">Get Quote</a>
+</div>
+
     </header>
 
     <!-- Hero Section -->
@@ -453,5 +453,27 @@
 
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  const overlay = document.createElement('div');
+  overlay.classList.add('menu-overlay');
+  document.body.appendChild(overlay);
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('visible', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+  });
+
+  overlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('visible');
+    document.body.classList.remove('menu-open');
+  });
+</script>
+
+
 </body>
 </html>

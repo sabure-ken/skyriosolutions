@@ -38,6 +38,13 @@
                 <i class="fas fa-bars"></i>
             </button>
         </nav>
+        <nav class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+</nav>
     </header>
 
     <!-- Hero Section -->
@@ -332,5 +339,32 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const body = document.body;
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
+    body.classList.toggle("menu-open");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll(".mobile-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      mobileMenu.classList.remove("active");
+      body.classList.remove("menu-open");
+    });
+  });
+
+  // Sticky header shadow on scroll
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector(".header");
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  });
+</script>
+
 </body>
 </html>

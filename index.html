@@ -1,424 +1,333 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyrioSolutions — From Code to Customers | Web & Mobile Development</title>
-    <meta name="description" content="SkyrioSolutions - Enterprise-grade web & mobile solutions. Professional website development, mobile apps, e-commerce, SEO & ongoing support. Based in Kenya, serving globally.">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SkyrioSolutions — From Code to Customers | Web & Mobile Development</title>
+  <meta name="description" content="SkyrioSolutions — enterprise-grade web & mobile solutions. Website development, mobile apps, e-commerce and ongoing support. Based in Kenya, serving global clients." />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" />
+
+  <!-- Your styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Open Graph + Twitter card for better sharing -->
+  <meta property="og:title" content="SkyrioSolutions — From Code to Customers" />
+  <meta property="og:description" content="Enterprise-grade web & mobile solutions. Website development, mobile apps, e-commerce & SEO." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    /* Tiny helper for visually-hidden text used by the menu close button & accessibility */
+    .sr-only { 
+      position: absolute !important; 
+      width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; 
+    }
+
+    /* Ensure hero content vertically centers on small screens too */
+    @media (max-height: 600px) {
+      .hero { padding-top: 6rem; padding-bottom: 4rem; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" role="banner">
-        <nav class="nav-container" aria-label="Main navigation">
-            <div class="brand">
-                <a href="index.html" class="logo-wrap">
-                    <img src="images/logo.png" alt="SkyrioSolutions" class="logo-img" width="48" height="48">
-                </a>
-                <div class="brand-text">
-                    <div class="site-title">SkyrioSolutions</div>
-                    <div class="site-sub">From Code to Customers</div>
-                </div>
-            </div>
+  <!-- Header / Nav -->
+  <header class="header" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+      <div class="brand" aria-hidden="false">
+        <a href="index.html" class="logo-wrap" title="SkyrioSolutions - Home">
+          <img src="images/logo.png" alt="SkyrioSolutions logo" class="logo-img" width="48" height="48" loading="lazy">
+        </a>
+        <div class="brand-text">
+          <div class="site-title">SkyrioSolutions</div>
+          <div class="site-sub">From Code to Customers</div>
+        </div>
+      </div>
 
-            <div class="nav-links" role="menubar">
-                <a href="index.html" class="nav-link active" role="menuitem">Home</a>
-                <a href="about.html" class="nav-link" role="menuitem">About</a>
-                <a href="services.html" class="nav-link" role="menuitem">Services</a>
-                <a href="portfolio.html" class="nav-link" role="menuitem">Portfolio</a>
-                <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
-            </div>
+      <!-- Desktop links -->
+      <div class="nav-links" role="menubar" aria-hidden="false">
+        <a href="index.html" class="nav-link active" role="menuitem">Home</a>
+        <a href="about.html" class="nav-link" role="menuitem">About</a>
+        <a href="services.html" class="nav-link" role="menuitem">Services</a>
+        <a href="portfolio.html" class="nav-link" role="menuitem">Portfolio</a>
+        <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+      </div>
 
-            <div class="nav-cta">
-                <a href="contact.html" class="btn">Get Quote</a>
-            </div>
+      <!-- CTA desktop -->
+      <div class="nav-cta" aria-hidden="false">
+        <a href="contact.html" class="btn btn-primary">Get Started</a>
+      </div>
 
-            <button class="hamburger" aria-label="Toggle navigation menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
-        </nav>
-        <!-- Mobile Menu (slides in from right) -->
- <div class="mobile-menu" id="mobileMenu">
-  <nav class="mobile-menu-links">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="portfolio.html" class="nav-link">Portfolio</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-  </nav>
-  <a href="contact.html" class="btn">Get Quote</a>
-</div>
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </nav>
 
-    </header>
+    <!-- Mobile menu (slides in from right) -->
+    <aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="mobileMenuTitle">
+      <div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+        <h3 id="mobileMenuTitle" style="margin:0;color:#e2e8f0;font-weight:700;">Menu</h3>
+        <button id="mobileClose" class="btn" aria-label="Close menu" title="Close menu">
+          <i class="fas fa-times" aria-hidden="true"></i>
+          <span class="sr-only">Close menu</span>
+        </button>
+      </div>
 
-    <!-- Hero Section -->
+      <nav class="mobile-menu-links" aria-label="Mobile navigation" style="display:flex;flex-direction:column;gap:1rem;margin-top:1.25rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="portfolio.html" class="nav-link">Portfolio</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div style="margin-top:auto;width:100%;">
+        <a href="contact.html" class="btn btn-primary" style="width:100%;display:inline-flex;justify-content:center;">Start Your Project</a>
+      </div>
+    </aside>
+  </header>
+
+  <main id="main" role="main">
+    <!-- Hero (full-screen centered, bold headline) -->
     <section id="home" class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <span class="hero-kicker"><i class="fas fa-rocket"></i> Launch • <i class="fas fa-chart-line"></i> Grow • <i class="fas fa-star"></i> Scale</span>
-                <h1 id="hero-title" class="hero-title">
-                    From Code to Customers – 
-                    <span style="background: var(--gradient-tech); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Building Your Digital Empire</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Enterprise-grade web development, mobile apps, and digital marketing solutions. 
-                    Based in Kenya, delivering world-class quality at competitive pricing.
-                </p>
+      <div class="hero-grid" role="region" aria-label="Intro">
+        <div class="hero-content">
+          <span class="hero-kicker" aria-hidden="true">
+            <i class="fas fa-rocket"></i> Launch &nbsp; • &nbsp; <i class="fas fa-chart-line"></i> Grow &nbsp; • &nbsp; <i class="fas fa-star"></i> Scale
+          </span>
 
-                <div class="hero-ctas">
-                    <a href="contact.html" class="btn btn-primary">
-                        <i class="fas fa-gem"></i> Get Free Consultation
-                    </a>
-                    <a href="#services" class="btn btn-secondary">
-                        <i class="fas fa-list"></i> View Our Services
-                    </a>
-                </div>
+          <h1 id="hero-title" class="hero-title">
+            From Code to Customers
+            <span class="hero-accent">Building Your Digital Empire</span>
+          </h1>
 
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <i class="fas fa-bolt"></i>
-                        Implementation ready in 2-4 weeks
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-shield-alt"></i>
-                        Ongoing support & maintenance
-                    </div>
-                    <div class="hero-feature">
-                        <i class="fas fa-tags"></i>
-                        Competitive pricing, premium quality
-                    </div>
-                </div>
-            </div>
+          <p class="hero-subtitle">
+            Enterprise-grade web development, mobile apps and digital marketing — built to convert users into customers. Based in Nairobi, delivering globally.
+          </p>
 
-            <aside class="hero-card" aria-label="Business highlights">
-                <div class="stat">
-                    <strong>Year 1 Target</strong>
-                    <small>Achieve KSh 960,000+ revenue</small>
-                </div>
-                <div class="stat">
-                    <strong>Mobile App Development</strong>
-                    <small>Cross-platform & native solutions</small>
-                </div>
-                <hr style="margin: 1.5rem 0; border: none; border-top: 1px solid rgba(255,255,255,0.2);">
-                <div class="card-grid">
-                    <div class="card-item">
-                        <div class="card-icon"><i class="fas fa-sync-alt"></i></div>
-                        <div class="card-label">Maintenance Plans</div>
-                        <div class="card-value">KSh 3K - 15K / month</div>
-                    </div>
-                    <div class="card-item">
-                        <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
-                        <div class="card-label">E-commerce Solutions</div>
-                        <div class="card-value">M-Pesa Integrated</div>
-                    </div>
-                </div>
-            </aside>
-        </div>
+
+          <div class="hero-features" aria-hidden="true">
+            <div class="hero-feature"><i class="fas fa-bolt"></i> Implementation in 2–4 weeks</div>
+            <div class="hero-feature"><i class="fas fa-shield-alt"></i> Ongoing support</div>
+            <div class="hero-feature"><i class="fas fa-tags"></i> Competitive pricing</div>
+          </div>
+        
+    </div>
+
+
+           <aside class="hero-card" aria-label="Our Approach">
+  <h3><i class="fas fa-route"></i> Our Approach</h3>
+  <div class="approach-step"><i class="fas fa-lightbulb"></i> Discover & Plan</div>
+  <div class="approach-step"><i class="fas fa-pencil-ruler"></i> Design & Build</div>
+  <div class="approach-step"><i class="fas fa-rocket"></i> Launch & Scale</div>
+  <p>We collaborate with you from idea to impact — ensuring each step moves your business closer to measurable growth.</p>
+  
+  <a href="contact.html" class="btn btn-primary" style="margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem;">
+    <i class="fas fa-paper-plane"></i> Start Your Project
+  </a>
+</aside>
+     
+
+      </div>
     </section>
 
-    <!-- Services Preview -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Premium Services</h2>
-            <p class="section-subtitle">
-                Comprehensive digital solutions tailored to drive your business growth and online presence.
-            </p>
+    <!-- Services -->
+<section id="services" class="section" aria-labelledby="services-title">
+  <div class="container">
+    <h2 id="services-title" class="section-title">Our Core Services</h2>
+    <p class="section-subtitle">
+      We craft scalable, high-performance solutions designed to help your business thrive.
+    </p>
 
-            <div class="services-grid">
-                <!-- Website Development -->
-                <div class="card card-gradient-1 fade-in">
-                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3 class="card-title">Website Development</h3>
-                    <p class="card-description">Custom websites built with modern technologies, responsive design, and SEO optimization to convert visitors into customers.</p>
-                    <div class="card-price">From KSh 25,000</div>
-                    <ul class="card-features">
-                        <li class="card-feature">Responsive Design</li>
-                        <li class="card-feature">SEO Optimized</li>
-                        <li class="card-feature">Fast Loading</li>
-                        <li class="card-feature">Custom Features</li>
-                    </ul>
-                    <div style="margin-top: 2rem;">
-                        <a href="services.html" class="btn btn-secondary" style="color: white; border: 1px solid rgba(255,255,255,0.3);">
-                            <i class="fas fa-arrow-right"></i> Learn More
-                        </a>
-                    </div>
-                </div>
+    <div class="services-grid" role="list">
+      <!-- Website Development -->
+      <article class="card card-gradient-1 fade-in" role="listitem" aria-labelledby="svc-web">
+        <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+        <h3 id="svc-web" class="card-title">Website Development</h3>
+        <p class="card-description">
+          Custom, fast-loading websites that blend design and functionality for measurable results.
+        </p>
+      </article>
 
-                <!-- Mobile App Development -->
-                <div class="card card-gradient-2 fade-in">
-                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3 class="card-title">Mobile App Development</h3>
-                    <p class="card-description">Native and cross-platform mobile applications with seamless user experience and robust backend integration.</p>
-                    <div class="card-price">From KSh 100,000</div>
-                    <ul class="card-features">
-                        <li class="card-feature">iOS & Android</li>
-                        <li class="card-feature">Backend API</li>
-                        <li class="card-feature">Admin Dashboard</li>
-                        <li class="card-feature">App Store Deployment</li>
-                    </ul>
-                    <div style="margin-top: 2rem;">
-                        <a href="services.html" class="btn btn-secondary" style="color: white; border: 1px solid rgba(255,255,255,0.3);">
-                            <i class="fas fa-arrow-right"></i> Learn More
-                        </a>
-                    </div>
-                </div>
+      <!-- Mobile Applications -->
+      <article class="card card-gradient-2 fade-in" role="listitem" aria-labelledby="svc-app">
+        <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <h3 id="svc-app" class="card-title">Mobile Applications</h3>
+        <p class="card-description">
+          Intuitive mobile experiences powered by robust backends — built for Android and iOS.
+        </p>
+      </article>
 
-                <!-- Digital Marketing -->
-                <div class="card card-gradient-3 fade-in">
-                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="card-title">Digital Marketing</h3>
-                    <p class="card-description">Data-driven marketing strategies to increase your online visibility, generate leads, and drive business growth.</p>
-                    <div class="card-price">From KSh 5,000/month</div>
-                    <ul class="card-features">
-                        <li class="card-feature">SEO Optimization</li>
-                        <li class="card-feature">Social Media Marketing</li>
-                        <li class="card-feature">Content Strategy</li>
-                        <li class="card-feature">Performance Analytics</li>
-                    </ul>
-                    <div style="margin-top: 2rem;">
-                        <a href="services.html" class="btn btn-secondary" style="color: white; border: 1px solid rgba(255,255,255,0.3);">
-                            <i class="fas fa-arrow-right"></i> Learn More
-                        </a>
-                    </div>
-                </div>
+      <!-- Digital Marketing -->
+      <article class="card card-gradient-3 fade-in" role="listitem" aria-labelledby="svc-marketing">
+        <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+        <h3 id="svc-marketing" class="card-title">Digital Marketing</h3>
+        <p class="card-description">
+          Strategic campaigns and analytics that amplify visibility and drive consistent growth.
+        </p>
+      </article>
+    </div>
+
+    <div class="text-center mt-4">
+      <a href="services.html" class="btn btn-primary">
+        Explore All Services <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Portfolio preview -->
+    <section class="section" aria-labelledby="portfolio-title" style="background:var(--gradient-dark);">
+      <div class="container">
+        <h2 id="portfolio-title" class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Recent work demonstrating our focus on usability, performance and conversions.</p>
+
+        <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <article class="portfolio-card slide-in-left" data-category="ecommerce" aria-labelledby="p1-title">
+            <div class="portfolio-image" role="img" aria-label="Nairobi Fashion Hub project preview" style="background:var(--gradient-primary);">
+              <i class="fas fa-shopping-bag" aria-hidden="true"></i>
             </div>
-
-            <div class="text-center mt-4">
-                <a href="services.html" class="btn btn-primary">
-                    <i class="fas fa-arrow-right"></i> View All Services
-                </a>
+            <div class="portfolio-content">
+              <span class="portfolio-badge">E-commerce</span>
+              <h3 id="p1-title" class="portfolio-title">Nairobi Fashion Hub</h3>
+              <p class="portfolio-description">M-Pesa enabled store for local designers with fast checkout and inventory management.</p>
+              <div class="portfolio-tech">
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">WooCommerce</span>
+                <span class="tech-tag">M-Pesa</span>
+              </div>
+              <a href="portfolio.html" class="portfolio-link">View project <i class="fas fa-arrow-right"></i></a>
             </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="portfolio-card fade-in" data-category="mobile" aria-labelledby="p2-title">
+            <div class="portfolio-image" style="background:var(--gradient-secondary);">
+              <i class="fas fa-utensils" aria-hidden="true"></i>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-badge">Mobile App</span>
+              <h3 id="p2-title" class="portfolio-title">Restaurant Ordering App</h3>
+              <p class="portfolio-description">Realtime tracking, multiple payment channels, faster checkout.</p>
+              <div class="portfolio-tech">
+                <span class="tech-tag">Flutter</span>
+                <span class="tech-tag">Firebase</span>
+              </div>
+              <a href="portfolio.html" class="portfolio-link">View project <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="portfolio-card slide-in-right" data-category="web" aria-labelledby="p3-title">
+            <div class="portfolio-image" style="background:var(--gradient-tech);">
+              <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-badge">Education</span>
+              <h3 id="p3-title" class="portfolio-title">E-Learning Platform</h3>
+              <p class="portfolio-description">Video streaming, progress tracking and assessments for institutions.</p>
+              <div class="portfolio-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">AWS</span>
+              </div>
+              <a href="portfolio.html" class="portfolio-link">View project <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>
         </div>
-    </section>
 
-    <!-- Portfolio Preview -->
-    <section class="section" style="background: var(--gradient-dark);">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">
-                Explore our recent work that demonstrates our expertise and commitment to quality.
-            </p>
-
-            <div class="portfolio-grid">
-                <!-- E-commerce Project -->
-                <div class="portfolio-card slide-in-left" data-category="ecommerce">
-                    <div class="portfolio-image" style="background: var(--gradient-primary);">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-badge">E-commerce</div>
-                        <h3 class="portfolio-title">Nairobi Fashion Hub</h3>
-                        <p class="portfolio-description">A modern e-commerce platform for local fashion designers with M-Pesa integration and inventory management.</p>
-                        
-                        <div class="portfolio-stats">
-                            <div class="stat-item">
-                                <strong>300%</strong>
-                                <span>Revenue Increase</span>
-                            </div>
-                            <div class="stat-item">
-                                <strong>2K+</strong>
-                                <span>Products</span>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">WooCommerce</span>
-                            <span class="tech-tag">M-Pesa</span>
-                        </div>
-                        <a href="portfolio.html" class="portfolio-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Mobile App Project -->
-                <div class="portfolio-card fade-in" data-category="mobile">
-                    <div class="portfolio-image" style="background: var(--gradient-secondary);">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-badge">Mobile App</div>
-                        <h3 class="portfolio-title">Restaurant Ordering App</h3>
-                        <p class="portfolio-description">Mobile application for food ordering with real-time tracking and multiple payment options.</p>
-                        
-                        <div class="portfolio-stats">
-                            <div class="stat-item">
-                                <strong>45%</strong>
-                                <span>Faster Orders</span>
-                            </div>
-                            <div class="stat-item">
-                                <strong>15K+</strong>
-                                <span>Downloads</span>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Node.js</span>
-                        </div>
-                        <a href="portfolio.html" class="portfolio-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Web Platform Project -->
-                <div class="portfolio-card slide-in-right" data-category="web">
-                    <div class="portfolio-image" style="background: var(--gradient-tech);">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-badge">Education</div>
-                        <h3 class="portfolio-title">E-Learning Platform</h3>
-                        <p class="portfolio-description">Comprehensive learning management system with video streaming and progress tracking.</p>
-                        
-                        <div class="portfolio-stats">
-                            <div class="stat-item">
-                                <strong>5K+</strong>
-                                <span>Students</span>
-                            </div>
-                            <div class="stat-item">
-                                <strong>200+</strong>
-                                <span>Courses</span>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                        <a href="portfolio.html" class="portfolio-link">
-                            View Project <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-4">
-                <a href="portfolio.html" class="btn btn-primary">
-                    <i class="fas fa-briefcase"></i> View Full Portfolio
-                </a>
-            </div>
+        <div class="text-center mt-4">
+          <a href="portfolio.html" class="btn btn-primary">View full portfolio</a>
         </div>
+      </div>
     </section>
 
     <!-- Testimonials -->
-    <section class="section testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <p class="section-subtitle">
-                Don't just take our word for it - hear from businesses we've helped transform.
-            </p>
+    <section class="section testimonials" aria-labelledby="testimonials-title">
+      <div class="container">
+        <h2 id="testimonials-title" class="section-title">What our clients say</h2>
+        <p class="section-subtitle">Real results from businesses we partnered with.</p>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-text">
-                        SkyrioSolutions transformed our online presence completely. Our website traffic increased by 300% in just 3 months, and the mobile app they built has revolutionized how we serve our customers.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: var(--gradient-primary);">SM</div>
-                        <div class="author-info">
-                            <h4>Sarah Mwangi</h4>
-                            <p>CEO, Nairobi Fashion Hub</p>
-                            <div class="project-link">
-                                <a href="portfolio.html" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card" cite="">
+            <p class="testimonial-text">SkyrioSolutions transformed our online presence — traffic increased 300% in 3 months and the mobile app changed how we serve customers.</p>
+            <footer class="testimonial-author">
+              <div class="author-avatar">SM</div>
+              <div class="author-info"><strong>Hellena Kariuki - </strong><span>CEO, Nairobi Fashion Hub</span></div>
+            </footer>
+          </blockquote>
 
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-text">
-                        The team's attention to detail and technical expertise is outstanding. They delivered our restaurant ordering app ahead of schedule, and it has significantly improved our order processing efficiency.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: var(--gradient-secondary);">JK</div>
-                        <div class="author-info">
-                            <h4>James Kariuki</h4>
-                            <p>Owner, Urban Bites Restaurant</p>
-                            <div class="project-link">
-                                <a href="portfolio.html" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-text">They delivered our ordering app ahead of schedule. Order processing is much faster and more reliable.</p>
+            <footer class="testimonial-author">
+              <div class="author-avatar">JK</div>
+              <div class="author-info"><strong>Barvin Mwikwabe - </strong><span>Owner, Urban Bites</span></div>
+            </footer>
+          </blockquote>
 
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-text">
-                        Working with SkyrioSolutions was a game-changer for our educational institution. Their e-learning platform has made remote learning seamless and engaging for our students.
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar" style="background: var(--gradient-tech);">DO</div>
-                        <div class="author-info">
-                            <h4>Dr. Grace Omondi</h4>
-                            <p>Director, Premier Academy</p>
-                            <div class="project-link">
-                                <a href="portfolio.html" class="portfolio-link">View Project <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <blockquote class="testimonial-card">
+            <p class="testimonial-text">The e-learning platform made remote teaching seamless for our students.</p>
+            <footer class="testimonial-author">
+              <div class="author-avatar">DO</div>
+              <div class="author-info"><strong>Dr. Grace Omondi - </strong><span>Director, Premier Academy</span></div>
+            </footer>
+          </blockquote>
         </div>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="section" style="background: var(--gradient-tech); color: white; text-align: center;">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to Start Your Project?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">
-                Let's discuss how we can bring your digital vision to life with our expert solutions.
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="contact.html" class="btn" style="background: white; color: var(--text-dark);">
-                    <i class="fas fa-paper-plane"></i> Get Started Today
-                </a>
-                <a href="tel:+254700000000" class="btn btn-secondary" style="border-color: rgba(255,255,255,0.3);">
-                    <i class="fas fa-phone"></i> Call Us Now
-                </a>
-            </div>
+    <!-- CTA -->
+    <section class="section" style="background:var(--gradient-tech); color:white; text-align:center;">
+      <div class="container">
+        <h2 class="section-title" style="color:white;">Ready to build?</h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.95);">Tell us about your project and we'll propose a plan that fits your goals.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+          <a href="tel:+254700000000" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.25);">Call us</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo">SkyrioSolutions</div>
-                    <p class="footer-tagline">From Code to Customers — Building Your Digital Empire</p>
-                    <div class="footer-contact">
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:hello@skyriosolutions.com">hello@skyriosolutions.com</a></p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:+254700000000">+254 700 000 000</a></p>
-                        <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
-                    </div>
-                </div>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo" aria-labelledby="footer-title">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">SkyrioSolutions</div>
+        <p class="footer-tagline">From Code to Customers — Building your digital empire</p>
+        <div class="footer-contact">
+          <p><i class="fas fa-envelope"></i> <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a></p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+254759834731">+254 759 834 731</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+        </div>
+      </div>
 
-                <div class="footer-links-group">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li class="footer-link"><a href="index.html">Home</a></li>
-                        <li class="footer-link"><a href="about.html">About Us</a></li>
-                        <li class="footer-link"><a href="services.html">Services</a></li>
-                        <li class="footer-link"><a href="portfolio.html">Portfolio</a></li>
-                        <li class="footer-link"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
+      <div class="footer-links-group">
+        <h3>Quick links</h3>
+        <ul class="footer-links" aria-label="Footer links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-                <div class="footer-social">
-                    <h3>Connect With Us</h3>
+      <div class="footer-social">
+                    <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="#" class="social-link" title="LinkedIn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
@@ -437,43 +346,77 @@
                         </a>
                     </div>
                 </div>
-            </div>
+    </div>
 
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    &copy; <span id="currentYear"></span> SkyrioSolutions. All rights reserved.
-                </div>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div class="footer-bottom">
+      <div>&copy; <span id="currentYear"></span> SkyrioSolutions. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of ervice</a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/portfolio.js"></script>
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  <!-- Optional external JS (keep for other behaviors), loaded deferred -->
+  <script defer src="js/portfolio.js"></script>
+  <script defer src="js/main.js"></script>
 
-  const overlay = document.createElement('div');
-  overlay.classList.add('menu-overlay');
-  document.body.appendChild(overlay);
+  <!-- Minimal inline JS: mobile menu, overlay and current year -->
+  <script>
+    (function () {
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileClose = document.getElementById('mobileClose');
+      // overlay element reused from CSS .menu-overlay class (created dynamically)
+      const overlay = document.createElement('div');
+      overlay.className = 'menu-overlay';
+      document.body.appendChild(overlay);
 
-  hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('active');
-    overlay.classList.toggle('visible', isOpen);
-    document.body.classList.toggle('menu-open', isOpen);
-  });
+      function openMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        hamburger.setAttribute('aria-expanded', 'true');
+        overlay.classList.add('visible');
+        document.body.classList.add('menu-open');
+        // move focus into menu for accessibility
+        mobileMenu.querySelector('a, button')?.focus();
+      }
 
-  overlay.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    overlay.classList.remove('visible');
-    document.body.classList.remove('menu-open');
-  });
-</script>
+      function closeMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburger.setAttribute('aria-expanded', 'false');
+        overlay.classList.remove('visible');
+        document.body.classList.remove('menu-open');
+        hamburger.focus();
+      }
 
+      hamburger.addEventListener('click', () => {
+        const opened = mobileMenu.classList.contains('active');
+        if (opened) closeMenu(); else openMenu();
+      });
 
+      if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+      overlay.addEventListener('click', closeMenu);
+
+      // Close menu on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+
+      // Close menu when a mobile link is clicked (improves UX)
+      mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', closeMenu);
+      });
+
+      // Set current year
+      const yEl = document.getElementById('currentYear');
+      if (yEl) yEl.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  
 </body>
 </html>

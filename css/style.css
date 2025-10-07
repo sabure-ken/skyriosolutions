@@ -1972,3 +1972,145 @@ body.menu-open {
   }
 }
 
+/* =========================================================
+   SKYRIOSOLUTIONS — MOBILE MENU + HAMBURGER FIX
+   (Add to end of style.css)
+========================================================= */
+
+/* ===== MOBILE MENU (Slide-in Panel) ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  max-width: 320px;
+  height: 100vh;
+  background: linear-gradient(135deg, #0ea5e9, #1e40af);
+  color: #ffffff;
+  padding: 5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.25);
+  transition: right 0.4s ease;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Links inside mobile menu */
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.mobile-menu-links .nav-link {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.mobile-menu-links .nav-link:hover {
+  transform: translateX(8px);
+  color: #facc15; /* bright yellow highlight */
+}
+
+/* Call-to-action button inside mobile menu */
+.mobile-menu .btn {
+  width: 100%;
+  background: #ffffff;
+  color: #1e3a8a;
+  font-weight: 600;
+  border-radius: 12px;
+  text-align: center;
+  padding: 0.9rem 1.25rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-menu .btn:hover {
+  background: #facc15;
+  transform: scale(1.05);
+}
+
+/* ===== OVERLAY (Dim background when menu is open) ===== */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 998;
+}
+
+.menu-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Prevent background scrolling when menu open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #1e3a8a;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Show hamburger on mobile only */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+}
+
+/* Hamburger transforms into "X" when menu open */
+.mobile-menu.active ~ .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+  background: #ffffff;
+}
+
+.mobile-menu.active ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu.active ~ .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+  background: #ffffff;
+}
+
+

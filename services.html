@@ -42,31 +42,31 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <!-- Mobile Menu -->
-  <aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="mobile-menu-header">
-      <h3>Menu</h3>
-      <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <nav class="mobile-menu-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link active">Services</a>
-      <a href="process.html" class="nav-link">Process</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    <div class="mobile-menu-cta">
-      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-    </div>
-  </aside>
 </header>
+
+<!-- Mobile Menu -->
+<aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-header">
+    <h3>Menu</h3>
+    <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link active">Services</a>
+    <a href="process.html" class="nav-link">Process</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+  </div>
+</aside>
 
 <main id="main">
   <!-- Hero Section -->
-  <section class="hero" aria-labelledby="services-hero-title">
+  <section class="hero services-hero" aria-labelledby="services-hero-title">
     <div class="hero-grid">
       <div class="hero-content">
         <span class="hero-kicker">
@@ -78,138 +78,276 @@
         <p class="hero-subtitle">
           From web apps to enterprise systems, SkyrioSolutions delivers technology that empowers your business to grow smarter, faster, and stronger.
         </p>
+        
+        <!-- Service Mini Cards -->
+        <div class="service-mini-cards">
+          <div class="service-mini-card">
+            <i class="fas fa-bolt"></i>
+            <div>
+              <strong>Fast Delivery</strong>
+              <span>Rapid prototyping and agile development</span>
+            </div>
+          </div>
+          <div class="service-mini-card">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong>Enterprise Security</strong>
+              <span>Bank-level security for your applications</span>
+            </div>
+          </div>
+        </div>
+        
         <div class="hero-ctas">
           <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
           <a href="process.html" class="btn btn-secondary"><i class="fas fa-diagram-project"></i> View Our Process</a>
         </div>
       </div>
-      <aside class="hero-card">
-        <h3><i class="fas fa-layer-group"></i> What We Offer</h3>
-        <p>Full-cycle software development and digital growth strategies under one roof.</p>
+      
+      <!-- Hero Card with Service Highlights -->
+      <aside class="hero-card service-highlights-card">
+        <h3><i class="fas fa-star"></i> Why Choose Our Services?</h3>
+        <div class="service-highlight">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Full-Cycle Development</strong>
+            <span>From concept to deployment</span>
+          </div>
+        </div>
+        <div class="service-highlight">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Scalable Solutions</strong>
+            <span>Grow with your business needs</span>
+          </div>
+        </div>
+        <div class="service-highlight">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Ongoing Support</strong>
+            <span>Continuous maintenance & updates</span>
+          </div>
+        </div>
+        <div class="service-highlight">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <strong>Transparent Pricing</strong>
+            <span>No hidden costs, clear quotes</span>
+          </div>
+        </div>
       </aside>
     </div>
   </section>
 
   <!-- Core Services -->
-  <section class="section" aria-labelledby="core-services-title">
+  <section class="section core-services" aria-labelledby="core-services-title">
     <div class="container">
       <header class="section-header">
         <h2 id="core-services-title" class="section-title">Our Core Services</h2>
         <p class="section-subtitle">Comprehensive, scalable solutions designed to fit your goals</p>
       </header>
 
-      <div class="services-grid">
-        <article class="card card-gradient-1">
-          <div class="card-icon"><i class="fas fa-code"></i></div>
-          <h3 class="card-title">Web Development</h3>
-          <p class="card-description">Responsive websites and scalable web apps crafted with performance and usability in mind.</p>
-          <ul class="card-features">
-            <li>Custom Web Apps</li>
-            <li>E-commerce Platforms</li>
-            <li>API Integration</li>
+      <div class="services-grid-enhanced">
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Web Development</h3>
+          <p>Responsive websites and scalable web apps crafted with performance and usability in mind.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Custom Web Applications</li>
+            <li><i class="fas fa-check"></i> E-commerce Platforms</li>
+            <li><i class="fas fa-check"></i> API Integration</li>
+            <li><i class="fas fa-check"></i> Progressive Web Apps</li>
           </ul>
+          <a href="#web-development" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </article>
 
-        <article class="card card-gradient-2">
-          <div class="card-icon"><i class="fas fa-mobile-screen"></i></div>
-          <h3 class="card-title">Mobile Applications</h3>
-          <p class="card-description">High-performance Android and iOS apps developed with native and cross-platform frameworks.</p>
-          <ul class="card-features">
-            <li>Flutter / Kotlin / Swift</li>
-            <li>Push Notifications</li>
-            <li>App Store Deployment</li>
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-screen"></i>
+          </div>
+          <h3>Mobile Applications</h3>
+          <p>High-performance Android and iOS apps developed with native and cross-platform frameworks.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Flutter / Kotlin / Swift</li>
+            <li><i class="fas fa-check"></i> Push Notifications</li>
+            <li><i class="fas fa-check"></i> App Store Deployment</li>
+            <li><i class="fas fa-check"></i> Cross-Platform Solutions</li>
           </ul>
+          <a href="#mobile-apps" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </article>
 
-        <article class="card card-gradient-3">
-          <div class="card-icon"><i class="fas fa-cloud"></i></div>
-          <h3 class="card-title">Cloud Solutions</h3>
-          <p class="card-description">Scalable cloud infrastructure for deployment, hosting, and data management.</p>
-          <ul class="card-features">
-            <li>AWS / Google Cloud / Firebase</li>
-            <li>Serverless Architecture</li>
-            <li>Cloud Migration</li>
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud Solutions</h3>
+          <p>Scalable cloud infrastructure for deployment, hosting, and data management.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> AWS / Google Cloud / Firebase</li>
+            <li><i class="fas fa-check"></i> Serverless Architecture</li>
+            <li><i class="fas fa-check"></i> Cloud Migration</li>
+            <li><i class="fas fa-check"></i> DevOps & CI/CD</li>
           </ul>
+          <a href="#cloud-solutions" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </article>
 
-        <article class="card card-gradient-4">
-          <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
-          <h3 class="card-title">UI/UX Design</h3>
-          <p class="card-description">Intuitive interfaces and design systems that elevate user engagement and brand value.</p>
-          <ul class="card-features">
-            <li>Wireframes & Prototypes</li>
-            <li>Design Systems</li>
-            <li>Usability Testing</li>
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3>UI/UX Design</h3>
+          <p>Intuitive interfaces and design systems that elevate user engagement and brand value.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Wireframes & Prototypes</li>
+            <li><i class="fas fa-check"></i> Design Systems</li>
+            <li><i class="fas fa-check"></i> Usability Testing</li>
+            <li><i class="fas fa-check"></i> Brand Identity</li>
           </ul>
+          <a href="#ui-ux-design" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </article>
 
-        <article class="card card-gradient-5">
-          <div class="card-icon"><i class="fas fa-bullhorn"></i></div>
-          <h3 class="card-title">Digital Marketing</h3>
-          <p class="card-description">Performance marketing strategies that amplify your brand’s visibility and ROI.</p>
-          <ul class="card-features">
-            <li>SEO & SEM</li>
-            <li>Social Media Strategy</li>
-            <li>Analytics & Optimization</li>
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Digital Marketing</h3>
+          <p>Performance marketing strategies that amplify your brand's visibility and ROI.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> SEO & SEM</li>
+            <li><i class="fas fa-check"></i> Social Media Strategy</li>
+            <li><i class="fas fa-check"></i> Analytics & Optimization</li>
+            <li><i class="fas fa-check"></i> Content Marketing</li>
           </ul>
+          <a href="#digital-marketing" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </article>
 
-        <article class="card card-gradient-6">
-          <div class="card-icon"><i class="fas fa-tools"></i></div>
-          <h3 class="card-title">Maintenance & Support</h3>
-          <p class="card-description">Continuous monitoring, optimization, and feature updates to keep you ahead.</p>
-          <ul class="card-features">
-            <li>Bug Fixes & Enhancements</li>
-            <li>Security Updates</li>
-            <li>Performance Audits</li>
+        <article class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Maintenance & Support</h3>
+          <p>Continuous monitoring, optimization, and feature updates to keep you ahead.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Bug Fixes & Enhancements</li>
+            <li><i class="fas fa-check"></i> Security Updates</li>
+            <li><i class="fas fa-check"></i> Performance Audits</li>
+            <li><i class="fas fa-check"></i> 24/7 Monitoring</li>
           </ul>
+          <a href="#maintenance" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Tech Stack -->
-  <section class="section" aria-labelledby="tech-stack-title">
+  <section class="section tech-section" aria-labelledby="tech-stack-title">
     <div class="container">
       <header class="section-header">
         <h2 id="tech-stack-title" class="section-title">Technologies We Master</h2>
         <p class="section-subtitle">Modern tools and frameworks that power innovation</p>
       </header>
 
-      <div class="tech-grid">
-        <div class="tech-group">
+      <div class="tech-grid-enhanced">
+        <div class="tech-category">
+          <div class="tech-icon">
+            <i class="fab fa-react"></i>
+          </div>
           <h3>Frontend</h3>
-          <p>React • Vue.js • HTML5 • CSS3 • Tailwind • Bootstrap</p>
+          <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Bootstrap</span>
+          </div>
         </div>
-        <div class="tech-group">
+
+        <div class="tech-category">
+          <div class="tech-icon">
+            <i class="fas fa-server"></i>
+          </div>
           <h3>Backend</h3>
-          <p>Node.js • Laravel • Django • Firebase • Express</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">Python</span>
+          </div>
         </div>
-        <div class="tech-group">
+
+        <div class="tech-category">
+          <div class="tech-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
           <h3>Mobile</h3>
-          <p>Flutter • Kotlin • Swift • Java</p>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">Swift</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">React Native</span>
+          </div>
         </div>
-        <div class="tech-group">
+
+        <div class="tech-category">
+          <div class="tech-icon">
+            <i class="fas fa-database"></i>
+          </div>
           <h3>Cloud & Database</h3>
-          <p>AWS • Google Cloud • MongoDB • MySQL • PostgreSQL</p>
+          <div class="tech-tags">
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Google Cloud</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Docker</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section class="section" aria-labelledby="why-title">
+  <section class="section why-section" aria-labelledby="why-title">
     <div class="container">
       <header class="section-header">
-        <h2 id="why-title" class="section-title">Why Businesses Choose SkyrioSolutions</h2>
+        <h2 id="why-title" class="section-title">Why Businesses Choose <span class="highlight">SkyrioSolutions</span></h2>
         <p class="section-subtitle">We combine technology, creativity, and strategy to deliver measurable impact</p>
       </header>
 
       <div class="why-grid">
-        <div class="why-card"><i class="fas fa-lightbulb"></i><h3>Innovation First</h3><p>We bring forward-thinking ideas that keep your business future-ready.</p></div>
-        <div class="why-card"><i class="fas fa-users"></i><h3>Collaborative Approach</h3><p>We work closely with clients, ensuring transparency and alignment at every step.</p></div>
-        <div class="why-card"><i class="fas fa-award"></i><h3>Proven Expertise</h3><p>Years of experience across diverse industries and technologies.</p></div>
-        <div class="why-card"><i class="fas fa-handshake"></i><h3>Long-Term Support</h3><p>Beyond delivery — we offer dedicated maintenance and growth partnership.</p></div>
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <h3>Innovation First</h3>
+          <p>We bring forward-thinking ideas that keep your business future-ready and competitive in the digital landscape.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Collaborative Approach</h3>
+          <p>We work closely with clients, ensuring transparency and alignment at every step of the development process.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3>Proven Expertise</h3>
+          <p>Years of experience across diverse industries and technologies, delivering successful projects consistently.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h3>Long-Term Support</h3>
+          <p>Beyond delivery — we offer dedicated maintenance and growth partnership to ensure your continued success.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -217,12 +355,16 @@
   <!-- CTA -->
   <section class="section cta-section">
     <div class="container">
-      <div class="cta-content">
-        <h2 class="section-title">Let’s Build Something Exceptional Together</h2>
-        <p class="section-subtitle">Partner with SkyrioSolutions for transformative digital solutions that grow your business.</p>
+      <div class="cta-content-enhanced">
+        <h2 class="section-title">Ready to Transform Your Digital Presence?</h2>
+        <p class="section-subtitle">Let's discuss your project and create a solution that drives real business results.</p>
         <div class="cta-actions">
-          <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
-          <a href="tel:+254759834731" class="btn btn-secondary"><i class="fas fa-phone"></i> +254 759 834 731</a>
+          <a href="contact.html" class="btn btn-primary btn-large">
+            <i class="fas fa-paper-plane"></i> Start Your Project
+          </a>
+          <a href="tel:+254759834731" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> +254 759 834 731
+          </a>
         </div>
       </div>
     </div>
@@ -230,74 +372,161 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
+    <!-- Top Section with CTA -->
+    <div class="footer-cta">
+      <div class="footer-cta-content">
+        <h3>Ready to Start Your Project?</h3>
+        <p>Let's build something amazing together. Get in touch for a free consultation.</p>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Get Started
+          </a>
+          <a href="tel:+254759834731" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-divider"></div>
 
+    <!-- Main Footer Content -->
     <div class="footer-grid">
-      <!-- Brand -->
+      <!-- Brand Column -->
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
-          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="56" height="56" />
-          <span>SkyrioSolutions</span>
+          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="60" height="60" />
+          <span class="footer-logo-text">SkyrioSolutions</span>
         </a>
-        <p class="footer-tagline">From Code to Customers — delivering intelligent, scalable digital products for modern businesses.</p>
+        <p class="footer-tagline">
+          Transforming businesses through innovative digital solutions. We build the future, one line of code at a time.
+        </p>
+        
         <div class="footer-contact">
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+254759834731">+254 759 834 731</a></p>
-          <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email Us</strong>
+              <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Call Us</strong>
+              <a href="tel:+254759834731">+254 759 834 731</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Visit Us</strong>
+              <span>Nairobi, Kenya</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Working Hours</strong>
+              <span>Mon-Fri: 9AM-6PM</span>
+              <span style="display: block; font-size: 0.8rem; color: #94a3b8;">Sat: 9AM-2PM</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Company -->
+      <!-- Services Column -->
+      <div class="footer-links-group">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#web-development">Web Development</a></li>
+          <li><a href="services.html#mobile-apps">Mobile Applications</a></li>
+          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+          <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
+          <li><a href="services.html#consulting">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
       <div class="footer-links-group">
         <h3>Company</h3>
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="process.html">Our Process</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Resources -->
-      <div class="footer-links-group">
-        <h3>Resources</h3>
-        <ul class="footer-links">
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
+      <!-- Resources & Social Column -->
+      <div class="footer-newsletter-social">
+        <div class="footer-newsletter">
+          <h3>Stay in the Loop</h3>
+          <p>Get the latest tech insights and project tips delivered to your inbox.</p>
+          <form class="newsletter-form" action="#" method="post">
+            <div class="input-group">
+              <input type="email" placeholder="Enter your email" aria-label="Your email address" required />
+              <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <small class="newsletter-note">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
 
-      <!-- Newsletter & Social -->
-      <div class="footer-newsletter">
-        <h3>Stay Updated</h3>
-        <p>Get monthly insights, tech tips, and updates from our team.</p>
-        <form class="newsletter-form" action="#" method="post">
-          <input type="email" placeholder="Enter your email" aria-label="Email" required />
-          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
-        </form>
         <div class="footer-social">
-          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://linkedin.com/company/skyriosolutions" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/skyriosolutions" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://wa.me/254759834731" class="social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://facebook.com/skyriosolutions" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="https://instagram.com/skyriosolutions" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Bottom Section -->
     <div class="footer-bottom">
-      <p>&copy; <span id="currentYear"></span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
-      <p class="footer-madeby">Crafted with ❤️ by the SkyrioSolutions Team.</p>
+      <div class="footer-bottom-content">
+        <div class="footer-copyright">
+          <p>&copy; <span class="current-year">2024</span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+        
+        <div class="footer-madeby">
+          <p>Crafted with <i class="fas fa-heart" style="color: #ef4444;"></i> by the SkyrioSolutions Team</p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+<!-- JavaScript -->
+<script src="js/main.js"></script>
 </body>
 </html>

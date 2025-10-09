@@ -43,206 +43,461 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <!-- Mobile Menu -->
-  <aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="mobile-menu-header">
-      <h3>Menu</h3>
-      <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <nav class="mobile-menu-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="process.html" class="nav-link active">Process</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    <div class="mobile-menu-cta">
-      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-    </div>
-  </aside>
 </header>
 
-<!-- Hero Section with Hero Card -->
-<section class="hero hero-alt" aria-labelledby="process-hero-title">
-  <div class="container hero-grid">
+<!-- Mobile Menu -->
+<aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-header">
+    <h3>Menu</h3>
+    <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="process.html" class="nav-link active">Process</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+  </div>
+</aside>
+
+<!-- Hero Section -->
+<section class="hero process-hero" aria-labelledby="process-hero-title">
+  <div class="hero-grid">
     <div class="hero-content">
-      <h1 id="process-hero-title" class="hero-title">Our Development Process</h1>
-      <p class="hero-subtitle">Structured, transparent, and results-driven. Every project delivered with precision.</p>
+      <span class="hero-kicker">
+        <i class="fas fa-road"></i> Structured • <i class="fas fa-eye"></i> Transparent • <i class="fas fa-trophy"></i> Results-Driven
+      </span>
+      <h1 id="process-hero-title" class="hero-title">
+        Our Development <span class="hero-accent">Process</span>
+      </h1>
+      <p class="hero-subtitle">
+        A proven methodology that ensures clarity, efficiency, and exceptional quality at every stage — from initial concept to successful launch and beyond.
+      </p>
+      
+      <!-- Process Mini Cards -->
+      <div class="process-mini-cards">
+        <div class="process-mini-card">
+          <i class="fas fa-clock"></i>
+          <div>
+            <strong>Fast Delivery</strong>
+            <span>Agile development cycles</span>
+          </div>
+        </div>
+        <div class="process-mini-card">
+          <i class="fas fa-shield-alt"></i>
+          <div>
+            <strong>Quality Assured</strong>
+            <span>Rigorous testing & QA</span>
+          </div>
+        </div>
+      </div>
+      
       <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Discuss Your Project</a>
+        <a href="contact.html" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> Discuss Your Project
+        </a>
+        <a href="#timeline" class="btn btn-secondary">
+          <i class="fas fa-arrow-down"></i> View Process
+        </a>
       </div>
     </div>
 
-    <aside class="hero-card" aria-label="Our Process Overview">
-      <h3><i class="fas fa-route"></i> How We Work</h3>
-      <p>Our methodology ensures clarity, efficiency, and quality at every stage — from concept to launch.</p>
-      <ul>
-        <li><strong>Discovery:</strong> Understanding your vision</li>
-        <li><strong>Design:</strong> Crafting intuitive interfaces</li>
-        <li><strong>Develop:</strong> Building scalable solutions</li>
-        <li><strong>Launch:</strong> Monitoring & ongoing support</li>
-      </ul>
+    <aside class="hero-card process-overview-card">
+      <h3><i class="fas fa-route"></i> Process Overview</h3>
+      <div class="process-highlight">
+        <i class="fas fa-lightbulb"></i>
+        <div>
+          <strong>Discovery & Strategy</strong>
+          <span>Understand your vision & goals</span>
+        </div>
+      </div>
+      <div class="process-highlight">
+        <i class="fas fa-pencil-ruler"></i>
+        <div>
+          <strong>Design & Prototyping</strong>
+          <span>Craft intuitive user experiences</span>
+        </div>
+      </div>
+      <div class="process-highlight">
+        <i class="fas fa-code"></i>
+        <div>
+          <strong>Development & Testing</strong>
+          <span>Build & quality assurance</span>
+        </div>
+      </div>
+      <div class="process-highlight">
+        <i class="fas fa-rocket"></i>
+        <div>
+          <strong>Launch & Support</strong>
+          <span>Deploy & ongoing maintenance</span>
+        </div>
+      </div>
     </aside>
   </div>
 </section>
 
 <!-- Timeline Process Section -->
-<section class="section process-timeline" aria-labelledby="timeline-title">
+<section id="timeline" class="section process-timeline-enhanced" aria-labelledby="timeline-title">
   <div class="container">
     <header class="section-header">
-      <h2 id="timeline-title" class="section-title">Step-by-Step Approach</h2>
-      <p class="section-subtitle">We guide you through every stage with clarity and professionalism.</p>
+      <h2 id="timeline-title" class="section-title">Our Step-by-Step Approach</h2>
+      <p class="section-subtitle">We guide you through every stage with clarity, transparency, and professional excellence</p>
     </header>
 
-    <div class="timeline">
+    <div class="timeline-enhanced">
 
       <!-- Step 1 -->
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fas fa-lightbulb"></i></div>
-        <div class="timeline-content">
-          <h3>1. Discovery & Research</h3>
-          <p>We dive deep into your business, audience, and goals to ensure a strong foundation.</p>
-          <ul>
-            <li>Stakeholder Interviews</li>
-            <li>Competitive Analysis</li>
-            <li>Technical Feasibility Study</li>
-            <li>Project Roadmap Creation</li>
-          </ul>
+      <div class="timeline-item-enhanced">
+        <div class="timeline-marker">
+          <div class="timeline-number">01</div>
+          <div class="timeline-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
         </div>
-        <div class="timeline-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="timeline-content-enhanced">
+          <h3>Discovery & Research</h3>
+          <p>We dive deep into your business, audience, and goals to ensure a strong foundation for your project's success.</p>
+          <div class="timeline-features">
+            <div class="timeline-feature">
+              <i class="fas fa-comments"></i>
+              <span>Stakeholder Interviews</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-chart-bar"></i>
+              <span>Competitive Analysis</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-cogs"></i>
+              <span>Technical Feasibility Study</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-map"></i>
+              <span>Project Roadmap Creation</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Step 2 -->
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fas fa-pencil-ruler"></i></div>
-        <div class="timeline-content">
-          <h3>2. Design & Prototyping</h3>
-          <p>Crafting interfaces and prototypes aligned with your brand for maximum usability.</p>
-          <ul>
-            <li>Wireframes & Mockups</li>
-            <li>Interactive Prototypes</li>
-            <li>UI/UX Refinement</li>
-            <li>Design Approval & Handoff</li>
-          </ul>
+      <div class="timeline-item-enhanced">
+        <div class="timeline-marker">
+          <div class="timeline-number">02</div>
+          <div class="timeline-icon">
+            <i class="fas fa-pencil-ruler"></i>
+          </div>
         </div>
-        <div class="timeline-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="timeline-content-enhanced">
+          <h3>Design & Prototyping</h3>
+          <p>Crafting beautiful, intuitive interfaces and prototypes aligned with your brand for maximum usability and engagement.</p>
+          <div class="timeline-features">
+            <div class="timeline-feature">
+              <i class="fas fa-palette"></i>
+              <span>Wireframes & Mockups</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-mobile-alt"></i>
+              <span>Interactive Prototypes</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-user-check"></i>
+              <span>UI/UX Refinement</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-thumbs-up"></i>
+              <span>Design Approval & Handoff</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Step 3 -->
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fas fa-code"></i></div>
-        <div class="timeline-content">
-          <h3>3. Development & Testing</h3>
-          <p>Building scalable, secure, and optimized solutions with rigorous quality checks.</p>
-          <ul>
-            <li>Agile Development Cycles</li>
-            <li>Unit & Integration Testing</li>
-            <li>Performance Optimization</li>
-            <li>Internal QA & Bug Fixes</li>
-          </ul>
+      <div class="timeline-item-enhanced">
+        <div class="timeline-marker">
+          <div class="timeline-number">03</div>
+          <div class="timeline-icon">
+            <i class="fas fa-code"></i>
+          </div>
         </div>
-        <div class="timeline-arrow"><i class="fas fa-arrow-down"></i></div>
+        <div class="timeline-content-enhanced">
+          <h3>Development & Testing</h3>
+          <p>Building scalable, secure, and optimized solutions with rigorous quality checks and continuous integration.</p>
+          <div class="timeline-features">
+            <div class="timeline-feature">
+              <i class="fas fa-sync-alt"></i>
+              <span>Agile Development Cycles</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-vial"></i>
+              <span>Unit & Integration Testing</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-tachometer-alt"></i>
+              <span>Performance Optimization</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-bug"></i>
+              <span>Internal QA & Bug Fixes</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Step 4 -->
-      <div class="timeline-item">
-        <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
-        <div class="timeline-content">
-          <h3>4. Launch & Support</h3>
-          <p>Deployment, monitoring, and ongoing support to ensure smooth operation and growth.</p>
-          <ul>
-            <li>Deployment & Go-Live</li>
-            <li>Performance Monitoring</li>
-            <li>Analytics & Reporting</li>
-            <li>Ongoing Support & Iteration</li>
-          </ul>
+      <div class="timeline-item-enhanced">
+        <div class="timeline-marker">
+          <div class="timeline-number">04</div>
+          <div class="timeline-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+        </div>
+        <div class="timeline-content-enhanced">
+          <h3>Launch & Support</h3>
+          <p>Seamless deployment, continuous monitoring, and ongoing support to ensure smooth operation and business growth.</p>
+          <div class="timeline-features">
+            <div class="timeline-feature">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <span>Deployment & Go-Live</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-chart-line"></i>
+              <span>Performance Monitoring</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-chart-pie"></i>
+              <span>Analytics & Reporting</span>
+            </div>
+            <div class="timeline-feature">
+              <i class="fas fa-headset"></i>
+              <span>Ongoing Support & Iteration</span>
+            </div>
+          </div>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section process-benefits" aria-labelledby="benefits-title">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="benefits-title" class="section-title">Why Our Process <span class="highlight">Delivers Results</span></h2>
+      <p class="section-subtitle">Our methodology is designed to maximize success and minimize risks for your project</p>
+    </header>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-eye"></i>
+        </div>
+        <h3>Complete Transparency</h3>
+        <p>Regular updates, clear communication, and full visibility into every stage of your project's development.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Agile & Efficient</h3>
+        <p>Flexible development cycles that adapt to your needs while maintaining speed and quality standards.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Quality Assured</h3>
+        <p>Rigorous testing protocols and quality checks at every stage to ensure exceptional results.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3>Partnership Approach</h3>
+        <p>We work as an extension of your team, ensuring alignment with your business goals and vision.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA Section -->
-<section class="section cta-section" aria-labelledby="cta-process-title">
+<section class="section cta-process">
   <div class="container">
-    <div class="cta-content">
-      <h2 id="cta-process-title" class="section-title">Ready to Collaborate?</h2>
-      <p class="section-subtitle">Let's bring your ideas to life with our structured process.</p>
-      <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Start Your Project</a>
+    <div class="cta-content-enhanced">
+      <h2 class="section-title">Ready to Start Your Project?</h2>
+      <p class="section-subtitle">Let's bring your ideas to life with our proven, structured development process designed for success.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary btn-large">
+          <i class="fas fa-paper-plane"></i> Start Your Project
+        </a>
+        <a href="tel:+254759834731" class="btn btn-secondary">
+          <i class="fas fa-phone"></i> +254 759 834 731
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
+    <!-- Top Section with CTA -->
+    <div class="footer-cta">
+      <div class="footer-cta-content">
+        <h3>Ready to Start Your Project?</h3>
+        <p>Let's build something amazing together. Get in touch for a free consultation.</p>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Get Started
+          </a>
+          <a href="tel:+254759834731" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-divider"></div>
+
+    <!-- Main Footer Content -->
     <div class="footer-grid">
+      <!-- Brand Column -->
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
-          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="56" height="56" />
-          <span>SkyrioSolutions</span>
+          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="60" height="60" />
+          <span class="footer-logo-text">SkyrioSolutions</span>
         </a>
         <p class="footer-tagline">
-          From Code to Customers — delivering intelligent, scalable digital products for modern businesses.
+          Transforming businesses through innovative digital solutions. We build the future, one line of code at a time.
         </p>
+        
         <div class="footer-contact">
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+254759834731">+254 759 834 731</a></p>
-          <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email Us</strong>
+              <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Call Us</strong>
+              <a href="tel:+254759834731">+254 759 834 731</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Visit Us</strong>
+              <span>Nairobi, Kenya</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Working Hours</strong>
+              <span>Mon-Fri: 9AM-6PM</span>
+              <span style="display: block; font-size: 0.8rem; color: #94a3b8;">Sat: 9AM-2PM</span>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- Services Column -->
+      <div class="footer-links-group">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#web-development">Web Development</a></li>
+          <li><a href="services.html#mobile-apps">Mobile Applications</a></li>
+          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+          <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
+          <li><a href="services.html#consulting">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
       <div class="footer-links-group">
         <h3>Company</h3>
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="process.html">Our Process</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
-      <div class="footer-links-group">
-        <h3>Resources</h3>
-        <ul class="footer-links">
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
+      <!-- Resources & Social Column -->
+      <div class="footer-newsletter-social">
+        <div class="footer-newsletter">
+          <h3>Stay in the Loop</h3>
+          <p>Get the latest tech insights and project tips delivered to your inbox.</p>
+          <form class="newsletter-form" action="#" method="post">
+            <div class="input-group">
+              <input type="email" placeholder="Enter your email" aria-label="Your email address" required />
+              <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <small class="newsletter-note">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
 
-      <div class="footer-newsletter">
-        <h3>Stay Updated</h3>
-        <p>Get monthly insights, tech tips, and updates from our team.</p>
-        <form class="newsletter-form" action="#" method="post">
-          <input type="email" placeholder="Enter your email" aria-label="Email" required />
-          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
-        </form>
         <div class="footer-social">
-          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://linkedin.com/company/skyriosolutions" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/skyriosolutions" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://wa.me/254759834731" class="social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://facebook.com/skyriosolutions" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="https://instagram.com/skyriosolutions" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Bottom Section -->
     <div class="footer-bottom">
-      <p>&copy; <span id="currentYear"></span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
-      <p class="footer-madeby">Crafted with ❤️ by the SkyrioSolutions Team.</p>
+      <div class="footer-bottom-content">
+        <div class="footer-copyright">
+          <p>&copy; <span class="current-year">2024</span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+        
+        <div class="footer-madeby">
+          <p>Crafted with <i class="fas fa-heart" style="color: #ef4444;"></i> by the SkyrioSolutions Team</p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+<!-- JavaScript -->
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -42,27 +42,27 @@
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <!-- Mobile Menu -->
-  <aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="mobile-menu-header">
-      <h3>Menu</h3>
-      <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    <nav class="mobile-menu-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="process.html" class="nav-link">Process</a>
-      <a href="contact.html" class="nav-link active">Contact</a>
-    </nav>
-    <div class="mobile-menu-cta">
-      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-    </div>
-  </aside>
 </header>
+
+<!-- Mobile Menu -->
+<aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-header">
+    <h3>Menu</h3>
+    <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="process.html" class="nav-link">Process</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+  </div>
+</aside>
 
 <main id="main">
   <!-- Hero Section -->
@@ -75,39 +75,34 @@
           <i class="fas fa-rocket"></i> Grow
         </span>
         <h1 id="contact-hero-title" class="hero-title">
-          Let’s <span class="hero-accent">Create Digital Impact</span> Together
+          Let's Build Something <span class="hero-accent">Extraordinary</span>
         </h1>
         <p class="hero-subtitle">
-          Whether you’re launching a new idea or scaling an existing product, our team is ready to help you succeed.
+          Ready to transform your vision into reality? Share your project details and we'll craft a solution that drives results.
         </p>
+        
+        <!-- Contact Cards -->
+        <div class="contact-mini-cards">
+          <div class="contact-mini-card">
+            <i class="fas fa-comment-dots"></i>
+            <div>
+              <strong>Quick Response</strong>
+              <span>We reply within 2 hours</span>
+            </div>
+          </div>
+          <div class="contact-mini-card">
+            <i class="fas fa-lightbulb"></i>
+            <div>
+              <strong>Free Consultation</strong>
+              <span>No obligation quote</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <aside class="hero-card">
-        <h3><i class="fas fa-address-card"></i> Contact Info</h3>
-        <ul class="hero-info">
-          <li><i class="fas fa-envelope"></i> <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a></li>
-          <li><i class="fas fa-phone"></i> <a href="tel:+254759834731">+254 759 834 731</a></li>
-          <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
-        </ul>
-        <div class="hero-hours">
-          <h4><i class="fas fa-clock"></i> Working Hours</h4>
-          <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
-          <p>Sat: 9:00 AM – 2:00 PM</p>
-          <p>Sun: Closed</p>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Contact Form Section -->
-  <section class="section contact-section" aria-labelledby="contact-section-title">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="contact-section-title" class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">Tell us more about your idea or project — we’ll get back to you shortly.</p>
-      </header>
-
-      <div class="contact-form-wrapper">
+      <!-- Hero Card with Form -->
+      <aside class="hero-card contact-form-card">
+        <h3><i class="fas fa-paper-plane"></i> Start Your Project</h3>
         <form id="contact-form" action="#" method="post" class="modern-contact-form">
           <div class="form-group">
             <input type="text" id="name" name="name" placeholder=" " required />
@@ -126,57 +121,224 @@
               <option>Mobile App Development</option>
               <option>UI/UX Design</option>
               <option>E-commerce Solutions</option>
-              <option>Branding & Graphic Design</option>
-              <option>SEO & Digital Marketing</option>
-              <option>Maintenance & Support</option>
+              <option>Digital Marketing</option>
               <option>Other</option>
             </select>
             <label for="service">Service Interested In</label>
           </div>
 
           <div class="form-group">
-            <textarea id="message" name="message" rows="6" placeholder=" " required></textarea>
-            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="message">Project Details</label>
           </div>
 
           <div class="form-action">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary btn-full">
               <i class="fas fa-paper-plane"></i> Send Message
             </button>
           </div>
         </form>
-      </div>
+      </aside>
     </div>
   </section>
+
+
+  <!-- FAQ Section -->
+<section id="faq" class="section faq" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="section-header">
+      <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Find quick answers to common questions about our services and process</p>
+    </header>
+
+    <div class="faq-list">
+      <!-- FAQ Item 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What services does SkyrioSolutions offer?</span>
+          <i class="faq-icon fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We offer comprehensive digital solutions including:</p>
+          <ul>
+            <li><strong>Web Development:</strong> Custom websites, web applications, and e-commerce platforms</li>
+            <li><strong>Mobile App Development:</strong> iOS and Android applications using modern frameworks</li>
+            <li><strong>UI/UX Design:</strong> User-centered design that enhances user experience and engagement</li>
+            <li><strong>Digital Marketing:</strong> SEO, content marketing, and social media strategies</li>
+            <li><strong>Cloud Solutions:</strong> Cloud migration, deployment, and management services</li>
+            <li><strong>IT Consulting:</strong> Strategic technology planning and implementation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is your typical project timeline?</span>
+          <i class="faq-icon fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Project timelines vary based on complexity and scope:</p>
+          <ul>
+            <li><strong>Basic Website:</strong> 2-4 weeks</li>
+            <li><strong>Custom Web Application:</strong> 4-12 weeks</li>
+            <li><strong>Mobile Application:</strong> 6-16 weeks</li>
+            <li><strong>E-commerce Platform:</strong> 8-20 weeks</li>
+            <li><strong>Enterprise Solution:</strong> 12+ weeks</li>
+          </ul>
+          <p>We provide a detailed timeline after our initial consultation and project scoping.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Do you offer ongoing support and maintenance?</span>
+          <i class="faq-icon fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes, we offer comprehensive support and maintenance packages:</p>
+          <ul>
+            <li><strong>Basic Support:</strong> Security updates, bug fixes, and minor enhancements</li>
+            <li><strong>Pro Support:</strong> Includes performance optimization and feature additions</li>
+            <li><strong>Enterprise Support:</strong> 24/7 monitoring, dedicated support team, and SLA guarantees</li>
+          </ul>
+          <p>All our projects include 30 days of free post-launch support.</p>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What is your development process?</span>
+          <i class="faq-icon fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We follow an agile, client-focused development process:</p>
+          <ol>
+            <li><strong>Discovery & Planning:</strong> Requirements gathering and project scoping</li>
+            <li><strong>Design & Prototyping:</strong> UI/UX design and interactive prototypes</li>
+            <li><strong>Development:</strong> Iterative development with regular client feedback</li>
+            <li><strong>Testing & Quality Assurance:</strong> Comprehensive testing across devices and platforms</li>
+            <li><strong>Deployment & Launch:</strong> Smooth deployment and post-launch support</li>
+            <li><strong>Maintenance & Growth:</strong> Ongoing optimization and feature development</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>What technologies do you work with?</span>
+          <i class="faq-icon fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We work with modern, industry-standard technologies:</p>
+          <div class="tech-grid">
+            <div class="tech-category">
+              <h4>Frontend</h4>
+              <ul>
+                <li>React, Vue.js, Angular</li>
+                <li>TypeScript, JavaScript ES6+</li>
+                <li>HTML5, CSS3, Sass</li>
+                <li>Tailwind CSS, Bootstrap</li>
+              </ul>
+            </div>
+            <div class="tech-category">
+              <h4>Backend</h4>
+              <ul>
+                <li>Node.js, Python, PHP</li>
+                <li>Express.js, Django, Laravel</li>
+                <li>REST APIs, GraphQL</li>
+                <li>MySQL, PostgreSQL, MongoDB</li>
+              </ul>
+            </div>
+            <div class="tech-category">
+              <h4>Mobile & Cloud</h4>
+              <ul>
+                <li>React Native, Flutter</li>
+                <li>AWS, Google Cloud, Azure</li>
+                <li>Docker, Kubernetes</li>
+                <li>Firebase, Supabase</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 6 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>How do you handle project pricing?</span>
+          <i class="faq-icon fas fa-plus"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We offer flexible pricing models to suit different project needs:</p>
+          <ul>
+            <li><strong>Fixed Price:</strong> For well-defined projects with clear requirements</li>
+            <li><strong>Time & Materials:</strong> For projects with evolving requirements</li>
+            <li><strong>Dedicated Team:</strong> Monthly rate for ongoing development needs</li>
+            <li><strong>Retainer:</strong> For ongoing support and maintenance</li>
+          </ul>
+          <p>We provide detailed quotes after understanding your project requirements. All quotes include transparent breakdowns of costs and deliverables.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ CTA -->
+    <div class="faq-cta">
+      <div class="faq-cta-content">
+        <h3>Still have questions?</h3>
+        <p>Can't find the answer you're looking for? Our team is here to help.</p>
+        <div class="faq-cta-actions">
+          <a href="mailto:info@skyriosolutions.com" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Email Us
+          </a>
+          <a href="https://wa.me/254759834731" class="btn btn-secondary">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Why Choose Us Section -->
   <section class="section why-section">
     <div class="container">
       <header class="section-header">
-        <h2 class="section-title">Why Choose <span class="highlight">SkyrioSolutions</span>?</h2>
-        <p class="section-subtitle">We blend creativity, technology, and strategy to deliver results that matter.</p>
+        <h2 class="section-title">Why Partner With <span class="highlight">SkyrioSolutions</span>?</h2>
+        <p class="section-subtitle">We combine technical excellence with strategic thinking to deliver exceptional results</p>
       </header>
 
       <div class="why-grid">
         <div class="why-card">
-          <i class="fas fa-lightbulb"></i>
-          <h3>Innovative Approach</h3>
-          <p>We craft intelligent solutions powered by creativity and data-driven insight.</p>
+          <div class="why-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Fast Execution</h3>
+          <p>Rapid prototyping and agile development to bring your ideas to market faster</p>
         </div>
         <div class="why-card">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Reliable & Secure</h3>
-          <p>Your project’s security and performance are our top priorities.</p>
+          <div class="why-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>Bank-level security protocols to protect your data and your customers</p>
         </div>
         <div class="why-card">
-          <i class="fas fa-users"></i>
-          <h3>Dedicated Team</h3>
-          <p>Our professionals work closely with you at every stage to ensure success.</p>
-        </div>
-        <div class="why-card">
-          <i class="fas fa-rocket"></i>
+          <div class="why-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
           <h3>Proven Results</h3>
-          <p>We’ve helped startups and enterprises launch products that make a lasting impact.</p>
+          <p>Track record of delivering successful projects that drive business growth</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Ongoing Support</h3>
+          <p>Continuous maintenance and support to ensure your solution evolves with you</p>
         </div>
       </div>
     </div>
@@ -184,71 +346,162 @@
 </main>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="container">
+    <!-- Top Section with CTA -->
+    <div class="footer-cta">
+      <div class="footer-cta-content">
+        <h3>Ready to Start Your Project?</h3>
+        <p>Let's build something amazing together. Get in touch for a free consultation.</p>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Get Started
+          </a>
+          <a href="tel:+254759834731" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="footer-divider"></div>
+
+    <!-- Main Footer Content -->
     <div class="footer-grid">
+      <!-- Brand Column -->
       <div class="footer-brand">
         <a href="index.html" class="footer-logo">
-          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="56" height="56" />
-          <span>SkyrioSolutions</span>
+          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="60" height="60" />
+          <span class="footer-logo-text">SkyrioSolutions</span>
         </a>
         <p class="footer-tagline">
-          From Code to Customers — delivering intelligent, scalable digital products for modern businesses.
+          Transforming businesses through innovative digital solutions. We build the future, one line of code at a time.
         </p>
+        
         <div class="footer-contact">
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+254759834731">+254 759 834 731</a></p>
-          <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email Us</strong>
+              <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Call Us</strong>
+              <a href="tel:+254759834731">+254 759 834 731</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Visit Us</strong>
+              <span>Nairobi, Kenya</span>
+            </div>
+          </div>
+          <!-- Working Hours in Footer -->
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Working Hours</strong>
+              <span>Mon-Fri: 9AM-6PM</span>
+              <span style="display: block; font-size: 0.8rem; color: #94a3b8;">Sat: 9AM-2PM</span>
+            </div>
+          </div>
         </div>
       </div>
 
+      <!-- Services Column -->
+      <div class="footer-links-group">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#web-development">Web Development</a></li>
+          <li><a href="services.html#mobile-apps">Mobile Applications</a></li>
+          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+          <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
+          <li><a href="services.html#consulting">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
       <div class="footer-links-group">
         <h3>Company</h3>
         <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="process.html">Our Process</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="careers.html">Careers</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
 
-      <div class="footer-links-group">
-        <h3>Resources</h3>
-        <ul class="footer-links">
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
+      <!-- Resources & Social Column -->
+      <div class="footer-newsletter-social">
+        <div class="footer-newsletter">
+          <h3>Stay in the Loop</h3>
+          <p>Get the latest tech insights and project tips delivered to your inbox.</p>
+          <form class="newsletter-form" action="#" method="post">
+            <div class="input-group">
+              <input type="email" placeholder="Enter your email" aria-label="Your email address" required />
+              <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <small class="newsletter-note">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
 
-      <div class="footer-newsletter">
-        <h3>Stay Updated</h3>
-        <p>Get monthly insights, tech tips, and updates from our team.</p>
-        <form class="newsletter-form" action="#" method="post">
-          <input type="email" placeholder="Enter your email" aria-label="Email" required />
-          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
-        </form>
         <div class="footer-social">
-          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://linkedin.com/company/skyriosolutions" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/skyriosolutions" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://wa.me/254759834731" class="social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://facebook.com/skyriosolutions" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="https://instagram.com/skyriosolutions" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Bottom Section -->
     <div class="footer-bottom">
-      <p>&copy; <span id="currentYear"></span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
-      <p class="footer-madeby">Crafted with ❤️ by the SkyrioSolutions Team.</p>
+      <div class="footer-bottom-content">
+        <div class="footer-copyright">
+          <p>&copy; <span class="current-year">2024</span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+        
+        <div class="footer-madeby">
+          <p>Crafted with <i class="fas fa-heart" style="color: #ef4444;"></i> by the SkyrioSolutions Team</p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+<!-- JavaScript -->
+<script src="js/main.js"></script>
 </body>
 </html>

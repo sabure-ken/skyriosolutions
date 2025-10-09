@@ -63,33 +63,33 @@
         <span></span>
       </button>
     </nav>
-
-    <!-- Mobile Menu -->
-    <aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile navigation">
-      <div class="mobile-menu-header">
-        <h3>Menu</h3>
-        <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <nav class="mobile-menu-links" aria-label="Mobile navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="process.html" class="nav-link">Process</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="mobile-menu-cta">
-        <a href="contact.html" class="btn btn-primary">Start Your Project</a>
-      </div>
-    </aside>
   </header>
+
+  <!-- Mobile Menu -->
+  <aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="mobile-menu-header">
+      <h3>Menu</h3>
+      <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-menu-links" aria-label="Mobile navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-cta">
+      <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </aside>
 
   <main id="main">
     <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero home-hero" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-content">
           <span class="hero-kicker">
@@ -105,6 +105,24 @@
             We build custom software, mobile applications, and digital experiences that transform businesses. 
             From concept to deployment, we're your partners in digital innovation.
           </p>
+
+          <!-- Home Hero Mini Cards -->
+          <div class="home-mini-cards">
+            <div class="home-mini-card">
+              <i class="fas fa-bolt"></i>
+              <div>
+                <strong>Fast Delivery</strong>
+                <span>Rapid prototyping & deployment</span>
+              </div>
+            </div>
+            <div class="home-mini-card">
+              <i class="fas fa-shield-alt"></i>
+              <div>
+                <strong>Enterprise Security</strong>
+                <span>Bank-level protection</span>
+              </div>
+            </div>
+          </div>
 
           <div class="hero-ctas">
             <a href="contact.html" class="btn btn-primary">
@@ -122,7 +140,7 @@
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Our Process">
+        <aside class="hero-card home-process-card">
           <h3><i class="fas fa-route"></i> Our Process</h3>
           <div class="approach-step">
             <i class="fas fa-lightbulb"></i>
@@ -145,12 +163,17 @@
               <span>Grow your business</span>
             </div>
           </div>
+          <div class="process-cta">
+            <a href="process.html" class="btn btn-secondary btn-small">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
         </aside>
       </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="section" aria-labelledby="services-title">
+    <section id="services" class="section services-home" aria-labelledby="services-title">
       <div class="container">
         <header class="section-header">
           <h2 id="services-title" class="section-title">Our Expertise</h2>
@@ -159,44 +182,50 @@
           </p>
         </header>
 
-        <div class="services-grid">
-          <article class="card card-gradient-1" aria-labelledby="web-dev">
-            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-            <h3 id="web-dev" class="card-title">Web Development</h3>
-            <p class="card-description">
-              Custom, responsive websites and web applications built with modern technologies for optimal performance and user experience.
-            </p>
-            <ul class="card-features">
-              <li>Responsive Design</li>
-              <li>E-commerce Solutions</li>
-              <li>CMS Development</li>
+        <div class="services-grid-enhanced">
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Web Development</h3>
+            <p>Custom, responsive websites and web applications built with modern technologies for optimal performance and user experience.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> Responsive Design</li>
+              <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+              <li><i class="fas fa-check"></i> CMS Development</li>
+              <li><i class="fas fa-check"></i> API Integration</li>
             </ul>
+            <a href="services.html#web-development" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </article>
 
-          <article class="card card-gradient-2" aria-labelledby="mobile-dev">
-            <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-            <h3 id="mobile-dev" class="card-title">Mobile Applications</h3>
-            <p class="card-description">
-              Native and cross-platform mobile apps that deliver seamless experiences across iOS and Android devices.
-            </p>
-            <ul class="card-features">
-              <li>iOS & Android</li>
-              <li>Cross-Platform</li>
-              <li>API Integration</li>
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h3>Mobile Applications</h3>
+            <p>Native and cross-platform mobile apps that deliver seamless experiences across iOS and Android devices.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> iOS & Android</li>
+              <li><i class="fas fa-check"></i> Cross-Platform</li>
+              <li><i class="fas fa-check"></i> API Integration</li>
+              <li><i class="fas fa-check"></i> App Store Deployment</li>
             </ul>
+            <a href="services.html#mobile-apps" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </article>
 
-          <article class="card card-gradient-3" aria-labelledby="digital-marketing">
-            <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-            <h3 id="digital-marketing" class="card-title">Digital Marketing</h3>
-            <p class="card-description">
-              Data-driven marketing strategies that increase visibility, drive traffic, and convert visitors into customers.
-            </p>
-            <ul class="card-features">
-              <li>SEO Optimization</li>
-              <li>Social Media Marketing</li>
-              <li>Content Strategy</li>
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3>Digital Marketing</h3>
+            <p>Data-driven marketing strategies that increase visibility, drive traffic, and convert visitors into customers.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> SEO Optimization</li>
+              <li><i class="fas fa-check"></i> Social Media Marketing</li>
+              <li><i class="fas fa-check"></i> Content Strategy</li>
+              <li><i class="fas fa-check"></i> Analytics & Optimization</li>
             </ul>
+            <a href="services.html#digital-marketing" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </article>
         </div>
 
@@ -209,81 +238,140 @@
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="section process-section" aria-labelledby="process-title">
-  <div class="container">
-    <header class="section-header">
-      <h2 id="process-title" class="section-title">Our Development Process</h2>
-      <p class="section-subtitle">
-        A transparent, results-driven approach designed to ensure every project’s success.
-      </p>
-    </header>
+    <section id="process" class="section process-home" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="process-title" class="section-title">Our Development Process</h2>
+          <p class="section-subtitle">
+            A transparent, results-driven approach designed to ensure every project's success
+          </p>
+        </header>
 
-    <div class="process-cards">
-      <article class="process-card fade-init">
-        <div class="process-icon"><i class="fas fa-lightbulb"></i></div>
-        <h3>1. Discovery & Strategy</h3>
-        <p>We analyze your business goals, audience, and technical needs to shape a clear project roadmap.</p>
-        <ul>
-          <li>Requirements Analysis</li>
-          <li>Technical Planning</li>
-          <li>Roadmapping</li>
-        </ul>
-      </article>
+        <div class="process-cards-enhanced">
+          <article class="process-card-enhanced">
+            <div class="process-number">01</div>
+            <div class="process-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Discovery & Strategy</h3>
+            <p>We analyze your business goals, audience, and technical needs to shape a clear project roadmap.</p>
+            <ul>
+              <li>Requirements Analysis</li>
+              <li>Technical Planning</li>
+              <li>Roadmapping</li>
+            </ul>
+          </article>
 
-      <article class="process-card fade-init">
-        <div class="process-icon"><i class="fas fa-pencil-ruler"></i></div>
-        <h3>2. Design & Prototyping</h3>
-        <p>Our designers craft intuitive interfaces and engaging experiences aligned with your brand.</p>
-        <ul>
-          <li>UI/UX Design</li>
-          <li>Wireframes</li>
-          <li>Interactive Prototypes</li>
-        </ul>
-      </article>
+          <article class="process-card-enhanced">
+            <div class="process-number">02</div>
+            <div class="process-icon">
+              <i class="fas fa-pencil-ruler"></i>
+            </div>
+            <h3>Design & Prototyping</h3>
+            <p>Our designers craft intuitive interfaces and engaging experiences aligned with your brand.</p>
+            <ul>
+              <li>UI/UX Design</li>
+              <li>Wireframes</li>
+              <li>Interactive Prototypes</li>
+            </ul>
+          </article>
 
-      <article class="process-card fade-init">
-        <div class="process-icon"><i class="fas fa-code"></i></div>
-        <h3>3. Development & Testing</h3>
-        <p>We build your solution using modern technologies, ensuring scalability, speed, and quality.</p>
-        <ul>
-          <li>Agile Development</li>
-          <li>Testing & QA</li>
-          <li>Performance Tuning</li>
-        </ul>
-      </article>
+          <article class="process-card-enhanced">
+            <div class="process-number">03</div>
+            <div class="process-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Development & Testing</h3>
+            <p>We build your solution using modern technologies, ensuring scalability, speed, and quality.</p>
+            <ul>
+              <li>Agile Development</li>
+              <li>Testing & QA</li>
+              <li>Performance Tuning</li>
+            </ul>
+          </article>
 
-      <article class="process-card fade-init">
-        <div class="process-icon"><i class="fas fa-rocket"></i></div>
-        <h3>4. Launch & Support</h3>
-        <p>From deployment to maintenance, we ensure your product runs smoothly as your business grows.</p>
-        <ul>
-          <li>Deployment</li>
-          <li>Monitoring</li>
-          <li>Ongoing Support</li>
-        </ul>
-      </article>
-    </div>
+          <article class="process-card-enhanced">
+            <div class="process-number">04</div>
+            <div class="process-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Launch & Support</h3>
+            <p>From deployment to maintenance, we ensure your product runs smoothly as your business grows.</p>
+            <ul>
+              <li>Deployment</li>
+              <li>Monitoring</li>
+              <li>Ongoing Support</li>
+            </ul>
+          </article>
+        </div>
 
-    <footer class="section-footer">
-      <a href="process.html" class="btn btn-primary">
-        Learn More About Our Process <i class="fas fa-arrow-right"></i>
-      </a>
-    </footer>
-  </div>
-</section>
+        <footer class="section-footer">
+          <a href="process.html" class="btn btn-primary">
+            Learn More About Our Process <i class="fas fa-arrow-right"></i>
+          </a>
+        </footer>
+      </div>
+    </section>
 
+    <!-- Why Choose Us -->
+    <section class="section why-home" aria-labelledby="why-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="why-title" class="section-title">Why Choose <span class="highlight">SkyrioSolutions</span>?</h2>
+          <p class="section-subtitle">We combine technology, creativity, and strategy to deliver measurable impact</p>
+        </header>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Fast Execution</h3>
+            <p>Rapid prototyping and agile development to bring your ideas to market faster and stay ahead of competition.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Enterprise Security</h3>
+            <p>Bank-level security protocols to protect your data, your customers, and your business reputation.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Proven Results</h3>
+            <p>Track record of delivering successful projects that drive real business growth and measurable ROI.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Ongoing Support</h3>
+            <p>Continuous maintenance, updates, and support to ensure your solution evolves with your business needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Testimonials -->
-    <section class="section testimonials" aria-labelledby="testimonials-title">
+    <section class="section testimonials-home" aria-labelledby="testimonials-title">
       <div class="container">
         <header class="section-header">
           <h2 id="testimonials-title" class="section-title">Client Success Stories</h2>
           <p class="section-subtitle">Hear from businesses we've helped transform</p>
         </header>
 
-        <div class="testimonials-grid">
-          <blockquote class="testimonial-card">
+        <div class="testimonials-grid-enhanced">
+          <blockquote class="testimonial-card-enhanced">
             <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
               <p class="testimonial-text">"SkyrioSolutions delivered beyond our expectations. Our online sales increased by 300% within months of launching the new platform."</p>
               <footer class="testimonial-author">
                 <div class="author-avatar">HK</div>
@@ -295,8 +383,15 @@
             </div>
           </blockquote>
 
-          <blockquote class="testimonial-card">
+          <blockquote class="testimonial-card-enhanced">
             <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
               <p class="testimonial-text">"The mobile app revolutionized our order processing. Delivery times improved by 40% and customer satisfaction skyrocketed."</p>
               <footer class="testimonial-author">
                 <div class="author-avatar">BM</div>
@@ -308,8 +403,15 @@
             </div>
           </blockquote>
 
-          <blockquote class="testimonial-card">
+          <blockquote class="testimonial-card-enhanced">
             <div class="testimonial-content">
+              <div class="testimonial-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
               <p class="testimonial-text">"Their e-learning platform made remote education seamless. Student engagement and performance metrics have never been better."</p>
               <footer class="testimonial-author">
                 <div class="author-avatar">GO</div>
@@ -325,13 +427,13 @@
     </section>
 
     <!-- CTA -->
-    <section class="section cta-section" aria-labelledby="cta-title">
+    <section class="section cta-home">
       <div class="container">
-        <div class="cta-content">
-          <h2 id="cta-title" class="section-title">Ready to Transform Your Business?</h2>
-          <p class="section-subtitle">Let's discuss your project and create a solution that drives results</p>
+        <div class="cta-content-enhanced">
+          <h2 class="section-title">Ready to Transform Your Business?</h2>
+          <p class="section-subtitle">Let's discuss your project and create a solution that drives real business results and measurable growth.</p>
           <div class="cta-actions">
-            <a href="contact.html" class="btn btn-primary">
+            <a href="contact.html" class="btn btn-primary btn-large">
               <i class="fas fa-paper-plane"></i> Start Your Project
             </a>
             <a href="tel:+254759834731" class="btn btn-secondary">
@@ -343,79 +445,160 @@
     </section>
   </main>
 
-   <!-- Footer -->
-  <footer class="footer">
-  <div class="container">
-    <div class="footer-divider"></div> <!-- Top subtle separator -->
-
-    <div class="footer-grid">
-      <!-- Brand -->
-      <div class="footer-brand">
-        <a href="index.html" class="footer-logo">
-          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="56" height="56" />
-          <span>SkyrioSolutions</span>
-        </a>
-        <p class="footer-tagline">
-          From Code to Customers — delivering intelligent, scalable digital products for modern businesses.
-        </p>
-
-        <div class="footer-contact">
-          <p><i class="fas fa-envelope"></i> <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a></p>
-          <p><i class="fas fa-phone"></i> <a href="tel:+254759834731">+254 759 834 731</a></p>
-          <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <!-- Top Section with CTA -->
+      <div class="footer-cta">
+        <div class="footer-cta-content">
+          <h3>Ready to Start Your Project?</h3>
+          <p>Let's build something amazing together. Get in touch for a free consultation.</p>
+          <div class="footer-cta-actions">
+            <a href="contact.html" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Get Started
+            </a>
+            <a href="tel:+254759834731" class="btn btn-secondary">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- Company -->
-      <div class="footer-links-group">
-        <h3>Company</h3>
-        <ul class="footer-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="process.html">Our Process</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="footer-divider"></div>
+
+      <!-- Main Footer Content -->
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="images/logo.png" alt="SkyrioSolutions Logo" width="60" height="60" />
+            <span class="footer-logo-text">SkyrioSolutions</span>
+          </a>
+          <p class="footer-tagline">
+            Transforming businesses through innovative digital solutions. We build the future, one line of code at a time.
+          </p>
+          
+          <div class="footer-contact">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email Us</strong>
+                <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Call Us</strong>
+                <a href="tel:+254759834731">+254 759 834 731</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Visit Us</strong>
+                <span>Nairobi, Kenya</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Working Hours</strong>
+                <span>Mon-Fri: 9AM-6PM</span>
+                <span style="display: block; font-size: 0.8rem; color: #94a3b8;">Sat: 9AM-2PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Column -->
+        <div class="footer-links-group">
+          <h3>Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html#web-development">Web Development</a></li>
+            <li><a href="services.html#mobile-apps">Mobile Applications</a></li>
+            <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+            <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
+            <li><a href="services.html#consulting">IT Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-links-group">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="process.html">Our Process</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources & Social Column -->
+        <div class="footer-newsletter-social">
+          <div class="footer-newsletter">
+            <h3>Stay in the Loop</h3>
+            <p>Get the latest tech insights and project tips delivered to your inbox.</p>
+            <form class="newsletter-form" action="#" method="post">
+              <div class="input-group">
+                <input type="email" placeholder="Enter your email" aria-label="Your email address" required />
+                <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+              <small class="newsletter-note">No spam. Unsubscribe anytime.</small>
+            </form>
+          </div>
+
+          <div class="footer-social">
+            <h4>Connect With Us</h4>
+            <div class="social-links">
+              <a href="https://linkedin.com/company/skyriosolutions" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/skyriosolutions" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://wa.me/254759834731" class="social-link" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+              </a>
+              <a href="https://facebook.com/skyriosolutions" class="social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
+              <a href="https://instagram.com/skyriosolutions" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Resources -->
-      <div class="footer-links-group">
-        <h3>Resources</h3>
-        <ul class="footer-links">
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Service</a></li>
-        </ul>
-      </div>
-
-      <!-- Newsletter & Social -->
-      <div class="footer-newsletter">
-        <h3>Stay Updated</h3>
-        <p>Get monthly insights, tech tips, and updates from our team.</p>
-        <form class="newsletter-form" action="#" method="post">
-          <input type="email" placeholder="Enter your email" aria-label="Email" required />
-          <button type="submit" class="btn btn-primary">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-
-        <div class="footer-social">
-          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <!-- Bottom Section -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <div class="footer-copyright">
+            <p>&copy; <span class="current-year">2024</span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
+          </div>
+          
+          <div class="footer-legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="cookies.html">Cookies</a>
+          </div>
+          
+          <div class="footer-madeby">
+            <p>Crafted with <i class="fas fa-heart" style="color: #ef4444;"></i> by the SkyrioSolutions Team</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; <span id="currentYear"></span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
-      <p class="footer-madeby">Crafted with ❤️ by the SkyrioSolutions Team.</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- JavaScript -->
   <script src="js/main.js"></script>

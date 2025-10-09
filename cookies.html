@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cookie Policy — SkyrioSolutions | Cookie Usage & Preferences</title>
+<meta name="description" content="Learn about SkyrioSolutions' cookie usage, types of cookies we use, and how to manage your cookie preferences.">
+<meta name="theme-color" content="#0ea5e9" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/legal.css" />
+<style>
+/* Additional Cookie-specific Styles */
+.cookie-controls {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cookie-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-toggle:last-child {
+  border-bottom: none;
+}
+
+.toggle-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.toggle-label strong {
+  color: #f1f5f9;
+  font-size: 1rem;
+}
+
+.toggle-label span {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  margin-left: 1rem;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #475569;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #0ea5e9;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(30px);
+}
+
+/* Essential cookies are always on */
+.toggle-essential {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.toggle-essential .toggle-slider {
+  background-color: #0ea5e9 !important;
+}
+
+.toggle-essential input {
+  cursor: not-allowed;
+}
+
+.cookie-actions-bottom {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.cookie-table-detailed {
+  margin: 2rem 0;
+}
+
+.cookie-table-detailed th {
+  white-space: nowrap;
+}
+
+.cookie-browser-instructions {
+  background: rgba(14, 165, 233, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.browser-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.browser-step {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.browser-step i {
+  font-size: 2rem;
+  color: #0ea5e9;
+  margin-bottom: 1rem;
+}
+
+.browser-step h4 {
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.browser-step p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .cookie-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .toggle-switch {
+    align-self: flex-end;
+  }
+  
+  .cookie-actions-bottom {
+    flex-direction: column;
+  }
+  
+  .cookie-actions-bottom .btn {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <nav class="nav-container" role="navigation">
+    <div class="brand">
+      <a href="index.html" class="logo-wrap">
+        <img src="images/logo.png" alt="SkyrioSolutions logo" width="48" height="48">
+      </a>
+      <div class="brand-text">
+        <div class="site-title">SkyrioSolutions</div>
+        <div class="site-sub">Digital Innovation Partners</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="process.html" class="nav-link">Process</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Start Project</a>
+    </div>
+
+    <button class="hamburger" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Menu -->
+<aside id="mobileMenu" class="mobile-menu" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="mobile-menu-header">
+    <h3>Menu</h3>
+    <button id="mobileClose" class="btn btn-secondary" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <nav class="mobile-menu-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="process.html" class="nav-link">Process</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+  </div>
+</aside>
+
+<main id="main">
+  <!-- Hero Section -->
+  <section class="legal-hero">
+    <div class="container">
+      <div class="legal-hero-content">
+        <h1>Cookie Policy</h1>
+        <p>Understand how we use cookies to enhance your browsing experience and how you can control your cookie preferences.</p>
+        <div class="last-updated">
+          <i class="fas fa-history"></i>
+          Last Updated: January 1, 2024
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cookie Content -->
+  <section class="legal-content">
+    <div class="container">
+      <div class="legal-container">
+        <!-- Quick Navigation -->
+        <nav class="legal-nav">
+          <h3><i class="fas fa-compass"></i> Quick Navigation</h3>
+          <div class="legal-nav-links">
+            <a href="#what-are-cookies" class="legal-nav-link">
+              <i class="fas fa-info-circle"></i>What Are Cookies
+            </a>
+            <a href="#types-we-use" class="legal-nav-link">
+              <i class="fas fa-cookie-bite"></i>Types We Use
+            </a>
+            <a href="#purpose" class="legal-nav-link">
+              <i class="fas fa-bullseye"></i>Purpose
+            </a>
+            <a href="#manage" class="legal-nav-link">
+              <i class="fas fa-sliders-h"></i>Manage Preferences
+            </a>
+            <a href="#third-party" class="legal-nav-link">
+              <i class="fas fa-external-link-alt"></i>Third-Party Cookies
+            </a>
+          </div>
+        </nav>
+
+        <!-- What Are Cookies -->
+        <section id="what-are-cookies" class="legal-section">
+          <h2><i class="fas fa-info-circle"></i>1. What Are Cookies?</h2>
+          <p>Cookies are small text files that are placed on your device when you visit our website. They help us provide you with a better experience by remembering your preferences and understanding how you use our site.</p>
+          
+          <div class="legal-notice info">
+            <h4><i class="fas fa-lightbulb"></i> How Cookies Work</h4>
+            <p>Cookies are not programs and cannot contain viruses or malware. They are simple text files that help websites remember your actions and preferences over time. When you visit our site, we may place cookies on your device to enhance functionality and analyze site usage.</p>
+          </div>
+
+          <h3><i class="fas fa-shield-alt"></i> Cookie Safety</h3>
+          <p>Cookies are completely safe and cannot be used to run programs or deliver viruses to your computer. They are simple text files that can only be read by the website that created them.</p>
+        </section>
+
+        <!-- Types of Cookies -->
+        <section id="types-we-use" class="legal-section">
+          <h2><i class="fas fa-cookie-bite"></i>2. Types of Cookies We Use</h2>
+          
+          <p>We use different types of cookies for various purposes:</p>
+
+          <table class="data-table cookie-table-detailed">
+            <thead>
+              <tr>
+                <th>Cookie Type</th>
+                <th>Purpose</th>
+                <th>Duration</th>
+                <th>Essential</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Strictly Necessary</strong></td>
+                <td>Website functionality, security, and basic operations</td>
+                <td>Session</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td><strong>Preferences</strong></td>
+                <td>Remember your settings, language preferences, and customized features</td>
+                <td>1 Year</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><strong>Analytics</strong></td>
+                <td>Understand how visitors use our site to improve user experience</td>
+                <td>2 Years</td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td><strong>Marketing</strong></td>
+                <td>Deliver relevant advertisements and measure campaign effectiveness</td>
+                <td>90 Days</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="data-category">
+            <h4><i class="fas fa-cookie"></i> Session vs Persistent Cookies</h4>
+            <ul>
+              <li><strong>Session Cookies:</strong> Temporary cookies that expire when you close your browser</li>
+              <li><strong>Persistent Cookies:</strong> Remain on your device for a set period or until manually deleted</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Purpose -->
+        <section id="purpose" class="legal-section">
+          <h2><i class="fas fa-bullseye"></i>3. Why We Use Cookies</h2>
+          
+          <p>Cookies help us provide you with a better, more personalized experience on our website:</p>
+
+          <div class="rights-grid">
+            <div class="right-card">
+              <h4><i class="fas fa-user-cog"></i> Personalization</h4>
+              <p>Remember your preferences, language settings, and customized features to enhance your browsing experience.</p>
+            </div>
+            <div class="right-card">
+              <h4><i class="fas fa-chart-line"></i> Analytics</h4>
+              <p>Understand how visitors interact with our website to improve content, navigation, and user experience.</p>
+            </div>
+            <div class="right-card">
+              <h4><i class="fas fa-shopping-cart"></i> Functionality</h4>
+              <p>Enable essential features like contact forms, shopping carts, and user authentication systems.</p>
+            </div>
+            <div class="right-card">
+              <h4><i class="fas fa-shield-alt"></i> Security</h4>
+              <p>Protect your data and prevent fraudulent activities through secure authentication methods.</p>
+            </div>
+          </div>
+
+          <h3><i class="fas fa-balance-scale"></i> Legal Basis</h3>
+          <p>We only use non-essential cookies with your explicit consent. Essential cookies that are necessary for the website to function do not require consent under data protection laws.</p>
+        </section>
+
+        <!-- Manage Preferences -->
+        <section id="manage" class="legal-section">
+          <h2><i class="fas fa-sliders-h"></i>4. Managing Cookie Preferences</h2>
+          
+          <p>You have full control over which cookies you accept. Here's how you can manage your preferences:</p>
+
+          <!-- Cookie Controls -->
+          <div class="cookie-controls">
+            <h4><i class="fas fa-cogs"></i> Cookie Settings</h4>
+            <p>Toggle the switches below to enable or disable different types of cookies:</p>
+            
+            <div class="cookie-toggle toggle-essential">
+              <div class="toggle-label">
+                <strong>Strictly Necessary Cookies</strong>
+                <span>Required for basic website functionality. Cannot be disabled.</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked disabled>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="cookie-toggle">
+              <div class="toggle-label">
+                <strong>Preference Cookies</strong>
+                <span>Remember your settings and preferences for future visits</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="preference-cookies" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="cookie-toggle">
+              <div class="toggle-label">
+                <strong>Analytics Cookies</strong>
+                <span>Help us understand how visitors use our website</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="analytics-cookies" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="cookie-toggle">
+              <div class="toggle-label">
+                <strong>Marketing Cookies</strong>
+                <span>Used to deliver relevant advertisements and measure campaigns</span>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="marketing-cookies">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            
+            <div class="cookie-actions-bottom">
+              <button class="btn btn-primary" id="save-preferences">
+                <i class="fas fa-save"></i> Save Preferences
+              </button>
+              <button class="btn btn-secondary" id="accept-all">
+                <i class="fas fa-check-circle"></i> Accept All
+              </button>
+              <button class="btn btn-secondary" id="reject-all">
+                <i class="fas fa-times-circle"></i> Reject All
+              </button>
+            </div>
+          </div>
+
+          <!-- Browser Instructions -->
+          <div class="cookie-browser-instructions">
+            <h4><i class="fas fa-desktop"></i> Browser Cookie Settings</h4>
+            <p>You can also manage cookies through your web browser settings. Here's how to access these settings in popular browsers:</p>
+            
+            <div class="browser-steps">
+              <div class="browser-step">
+                <i class="fab fa-chrome"></i>
+                <h4>Google Chrome</h4>
+                <p>Settings → Privacy and Security → Cookies and other site data</p>
+              </div>
+              <div class="browser-step">
+                <i class="fab fa-firefox"></i>
+                <h4>Mozilla Firefox</h4>
+                <p>Preferences → Privacy & Security → Cookies and Site Data</p>
+              </div>
+              <div class="browser-step">
+                <i class="fab fa-safari"></i>
+                <h4>Apple Safari</h4>
+                <p>Preferences → Privacy → Cookies and website data</p>
+              </div>
+              <div class="browser-step">
+                <i class="fab fa-edge"></i>
+                <h4>Microsoft Edge</h4>
+                <p>Settings → Cookies and site permissions → Cookies and data stored</p>
+              </div>
+            </div>
+          </div>
+
+          <h3><i class="fas fa-eraser"></i> Deleting Cookies</h3>
+          <p>You can delete existing cookies from your device at any time through your browser settings. Please note that deleting cookies may reset your preferences and affect website functionality.</p>
+        </section>
+
+        <!-- Third-Party Cookies -->
+        <section id="third-party" class="legal-section">
+          <h2><i class="fas fa-external-link-alt"></i>5. Third-Party Cookies</h2>
+          
+          <p>We may use third-party services that also place cookies on your device:</p>
+
+          <div class="data-category">
+            <h4><i class="fas fa-chart-bar"></i> Analytics Services</h4>
+            <p>We use Google Analytics to understand how visitors interact with our website. These services use cookies to collect information about your visit, including:</p>
+            <ul>
+              <li>Pages you visit and time spent on each page</li>
+              <li>Referring websites and search terms</li>
+              <li>Device type and browser information</li>
+              <li>General geographic location</li>
+            </ul>
+          </div>
+
+          <div class="data-category">
+            <h4><i class="fas fa-share-alt"></i> Social Media Cookies</h4>
+            <p>We integrate with social media platforms that may set cookies when you interact with social sharing buttons or embedded content.</p>
+          </div>
+
+          <div class="legal-notice warning">
+            <h4><i class="fas fa-exclamation-triangle"></i> Third-Party Policies</h4>
+            <p>Please note that third-party cookies are subject to the privacy policies of those respective companies. We recommend reviewing their policies for more information about how they handle your data.</p>
+          </div>
+        </section>
+
+        <!-- Updates -->
+        <section id="updates" class="legal-section">
+          <h2><i class="fas fa-sync-alt"></i>6. Policy Updates</h2>
+          
+          <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our services. Significant changes will be communicated through:</p>
+          <ul>
+            <li>Notifications on our website</li>
+            <li>Email communications to registered users</li>
+            <li>Updated timestamps on this policy page</li>
+          </ul>
+
+          <div class="data-category">
+            <h4><i class="fas fa-history"></i> Version History</h4>
+            <p><strong>Current Version:</strong> 1.0 (Effective January 1, 2024)</p>
+            <p><strong>First Published:</strong> January 1, 2024</p>
+          </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <div class="contact-legal">
+          <div class="contact-legal-content">
+            <h3>Cookie Questions?</h3>
+            <p>Contact us if you have any questions about our cookie usage or need help managing your preferences.</p>
+            <a href="contact.html" class="btn btn-primary">
+              <i class="fas fa-cookie"></i> Contact Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer" role="contentinfo">
+  <!-- Your existing footer code -->
+  <div class="container">
+    <!-- Top Section with CTA -->
+    <div class="footer-cta">
+      <div class="footer-cta-content">
+        <h3>Ready to Start Your Project?</h3>
+        <p>Let's build something amazing together. Get in touch for a free consultation.</p>
+        <div class="footer-cta-actions">
+          <a href="contact.html" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Get Started
+          </a>
+          <a href="tel:+254759834731" class="btn btn-secondary">
+            <i class="fas fa-phone"></i> Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <!-- Main Footer Content -->
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.png" alt="SkyrioSolutions Logo" width="60" height="60" />
+          <span class="footer-logo-text">SkyrioSolutions</span>
+        </a>
+        <p class="footer-tagline">
+          Transforming businesses through innovative digital solutions. We build the future, one line of code at a time.
+        </p>
+        
+        <div class="footer-contact">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email Us</strong>
+              <a href="mailto:info@skyriosolutions.com">info@skyriosolutions.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Call Us</strong>
+              <a href="tel:+254759834731">+254 759 834 731</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong>Visit Us</strong>
+              <span>Nairobi, Kenya</span>
+            </div>
+          </div>
+          <!-- Working Hours in Footer -->
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong>Working Hours</strong>
+              <span>Mon-Fri: 9AM-6PM</span>
+              <span style="display: block; font-size: 0.8rem; color: #94a3b8;">Sat: 9AM-2PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Column -->
+      <div class="footer-links-group">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#web-development">Web Development</a></li>
+          <li><a href="services.html#mobile-apps">Mobile Applications</a></li>
+          <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
+          <li><a href="services.html#ecommerce">E-commerce Solutions</a></li>
+          <li><a href="services.html#consulting">IT Consulting</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-links-group">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources & Social Column -->
+      <div class="footer-newsletter-social">
+        <div class="footer-newsletter">
+          <h3>Stay in the Loop</h3>
+          <p>Get the latest tech insights and project tips delivered to your inbox.</p>
+          <form class="newsletter-form" action="#" method="post">
+            <div class="input-group">
+              <input type="email" placeholder="Enter your email" aria-label="Your email address" required />
+              <button type="submit" class="btn btn-primary" aria-label="Subscribe to newsletter">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <small class="newsletter-note">No spam. Unsubscribe anytime.</small>
+          </form>
+        </div>
+
+        <div class="footer-social">
+          <h4>Connect With Us</h4>
+          <div class="social-links">
+            <a href="https://linkedin.com/company/skyriosolutions" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/skyriosolutions" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://wa.me/254759834731" class="social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+            <a href="https://facebook.com/skyriosolutions" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="https://instagram.com/skyriosolutions" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="footer-copyright">
+          <p>&copy; <span class="current-year">2024</span> <strong>SkyrioSolutions</strong>. All rights reserved.</p>
+        </div>
+        
+        <div class="footer-legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookies</a>
+        </div>
+        
+        <div class="footer-madeby">
+          <p>Crafted with <i class="fas fa-heart" style="color: #ef4444;"></i> by the SkyrioSolutions Team</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/main.js"></script>
+<script>
+// Cookie Preferences Management
+document.addEventListener('DOMContentLoaded', function() {
+  // Load saved preferences
+  loadCookiePreferences();
+  
+  // Save Preferences Button
+  document.getElementById('save-preferences').addEventListener('click', saveCookiePreferences);
+  
+  // Accept All Button
+  document.getElementById('accept-all').addEventListener('click', function() {
+    document.getElementById('preference-cookies').checked = true;
+    document.getElementById('analytics-cookies').checked = true;
+    document.getElementById('marketing-cookies').checked = true;
+    saveCookiePreferences();
+  });
+  
+  // Reject All Button
+  document.getElementById('reject-all').addEventListener('click', function() {
+    document.getElementById('preference-cookies').checked = false;
+    document.getElementById('analytics-cookies').checked = false;
+    document.getElementById('marketing-cookies').checked = false;
+    saveCookiePreferences();
+  });
+});
+
+function loadCookiePreferences() {
+  const preferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+  
+  if (preferences.preference !== undefined) {
+    document.getElementById('preference-cookies').checked = preferences.preference;
+  }
+  if (preferences.analytics !== undefined) {
+    document.getElementById('analytics-cookies').checked = preferences.analytics;
+  }
+  if (preferences.marketing !== undefined) {
+    document.getElementById('marketing-cookies').checked = preferences.marketing;
+  }
+}
+
+function saveCookiePreferences() {
+  const preferences = {
+    preference: document.getElementById('preference-cookies').checked,
+    analytics: document.getElementById('analytics-cookies').checked,
+    marketing: document.getElementById('marketing-cookies').checked,
+    timestamp: new Date().toISOString()
+  };
+  
+  localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+  localStorage.setItem('cookiesAccepted', 'true');
+  
+  // Show confirmation
+  showNotification('Cookie preferences saved successfully!', 'success');
+}
+
+function showNotification(message, type) {
+  const notification = document.createElement('div');
+  notification.className = `cookie-notification cookie-notification-${type}`;
+  notification.innerHTML = `
+    <div class="cookie-notification-content">
+      <i class="fas fa-${type === 'success' ? 'check' : 'exclamation'}-circle"></i>
+      <span>${message}</span>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.classList.add('cookie-notification-show');
+  }, 100);
+  
+  setTimeout(() => {
+    notification.classList.remove('cookie-notification-show');
+    setTimeout(() => {
+      document.body.removeChild(notification);
+    }, 300);
+  }, 3000);
+}
+
+// Smooth scrolling for anchor links
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
+anchorLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const offsetTop = targetElement.offsetTop - 100;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+</script>
+
+<style>
+/* Notification Styles */
+.cookie-notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+  max-width: 300px;
+}
+
+.cookie-notification-error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.cookie-notification-show {
+  transform: translateX(0);
+}
+
+.cookie-notification-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cookie-notification-content i {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .cookie-notification {
+    right: 1rem;
+    left: 1rem;
+    max-width: none;
+  }
+}
+</style>
+
+</body>
+</html>
